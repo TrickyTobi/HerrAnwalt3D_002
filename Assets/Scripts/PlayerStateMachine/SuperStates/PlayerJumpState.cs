@@ -34,7 +34,6 @@ public class PlayerJumpState : PlayerBaseState
     {
         if (_ctx.IsGrounded)
             SwitchStates(_factory.Grounded());
-
     }
 
     public override void InitializeSubState() //Initialisiert den Substate

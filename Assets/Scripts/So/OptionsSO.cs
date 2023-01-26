@@ -1,4 +1,5 @@
 
+using System.Diagnostics;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -17,6 +18,7 @@ public class OptionsSO : ScriptableObject
     [Header("Game")]
     [Space(20)]
     [SerializeField] bool _showLoadingScreen; public bool ShowLoadingScreen { get => _showLoadingScreen; set => _showLoadingScreen = value; }
+    [SerializeField] bool _debug; public bool Debug { get => _debug; set => _debug = value; }
     float _volume; public float Volume { get { return _volume; } set { _volume = value; UpdateVolume(); } }
 
     [SerializeField] float _testVolume;

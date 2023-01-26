@@ -167,10 +167,8 @@ public class PlayerStateMachine : MonoBehaviour
     [Header("Animation")]
     [Space(10)]
 
-
     float _animBlockT = 0.2f; public float AnimBlockT { get => _animBlockT; set => _animBlockT = value; }
     float _animAttackT = 0.2f; public float AnimAttackT { get => _animAttackT; set => _animAttackT = value; }
-
 
     [SerializeField] float _velocityX = 0; public float VelocityX { get => _velocityX; set => _velocityX = value; }
 

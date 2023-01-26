@@ -21,8 +21,6 @@ public class LoadingScreenFake : MonoBehaviour
 
     private void Start()
     {
-
-
         _music = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
         _player = GameObject.Find("HerrAnwalt").GetComponent<PlayerStateMachine>();
         _gameUI = GameObject.Find("3D Canvas");
@@ -76,8 +74,10 @@ public class LoadingScreenFake : MonoBehaviour
 
     IEnumerator End()
     {
-        yield return new WaitForSecondsRealtime((float)_video.clip.length);
+        if (!_options.Debug)
+            yield return new WaitForSecondsRealtime((float)_video.clip.length - 0.3f);
 
+        yield return new WaitForSecondsRealtime(0.5f);
         _playing = false;
     }
 

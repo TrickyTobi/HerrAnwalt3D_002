@@ -22,7 +22,6 @@ public class Paragraph : MonoBehaviour
         StartCoroutine(CollectableTimer());
 
         StartCoroutine(TimeOutTimer());
-
     }
 
 
@@ -41,7 +40,7 @@ public class Paragraph : MonoBehaviour
         effect.Play();
         _collectable = false;
         GetComponent<MeshRenderer>().enabled = false;
-        Destroy(gameObject, 4f); //Zerstört den Rest des Gameobject nach 3 sekunden
+        Destroy(gameObject);
     }
 
     IEnumerator TimeOutTimer()
@@ -51,7 +50,7 @@ public class Paragraph : MonoBehaviour
         var effect = Instantiate(_particlesTimeOut, transform.position + Vector3.up * 0.2f, Quaternion.identity);
         effect.Play();
         GetComponent<MeshRenderer>().enabled = false;
-        Destroy(gameObject, 4f); //Zerstört den Rest des Gameobject nach 3 sekunden
+        Destroy(gameObject);
 
     }
 
