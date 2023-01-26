@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452c1b3010b89d348a35f37b9be9ea74, type: 3}
+  m_Name: OptionsSO
+  m_EditorClassIdentifier: 
+  mouseSensetivity: 1.2949393
+  _showLoadingScreen: 0
+  _testVolume: 4.977962
+  _muted: 0
+  _backgroundMusicVolume: 0.011
+  _fightMusicVolume: 0.14
+  _endvideoVolume: 0.09
+  _loadingScreenVolume: 0.2
+  _laptopVolume: 0.6
+  volumeCorrectionMultiplier: 10
+  _stepVolume: 0.02
+  _genericAttackVolume: 0.3
+  _attackSwooshVolume: 0.06
+  _attornyHitVolume: 0.1
+  _attorneyBlockVolume: 0.1
+  _attorneyBlockBreakVolume: 0.1
+  _attorneyGotHitVolume: 0.2
+  _attorneyHeavyBreathVolume: 0.2
+  _childHelpVolume: 0.2
+  _childCheeringVolume: 0.2
+  _fenceHitVolume: 0.2
+  _teacherGotHitVolume: 0.2
+  _teacherTauntingVolume: 1
+  _teacherAttackVolume: 0.4
+  _teacherHitVolume: 0.1
+  _teacherDeathVolume: 1

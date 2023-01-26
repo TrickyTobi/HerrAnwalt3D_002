@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a3e1b4e27633d429d3e25c000ea23a, type: 3}
+  m_Name: PlayerStatsSO
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: 64f63c7bb6eeda847b8c57a00546a0e4, type: 2}
+  _playerHealth: 4
+  _playerMaxHealth: 4
+  _playerParagraphCount: 0
+  _paragraphsToAddLife: 4

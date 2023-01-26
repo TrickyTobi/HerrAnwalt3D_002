@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceae9b6fdfdbd074893a241ad9478a61, type: 3}
+  m_Name: SoundEffectSO
+  m_EditorClassIdentifier: 
+  punchSound:
+  - {fileID: 8300000, guid: 8b8b6e69878cf9e43ae4c3744a040379, type: 3}
+  - {fileID: 8300000, guid: b7c8da53e85a6bf44828aad697872d00, type: 3}
+  - {fileID: 8300000, guid: 39c853b44cb41b84992229bf51f8c1cd, type: 3}
+  - {fileID: 8300000, guid: 186c1a72317f38849b735ff147dcd466, type: 3}
+  attackSwooshSound:
+  - {fileID: 8300000, guid: ebf9386606bc91d4faff439b48d4b4d4, type: 3}
+  - {fileID: 8300000, guid: 554b7bd60591d414f83042c268e613f0, type: 3}
+  - {fileID: 8300000, guid: 951051cad9f37cd4f8dfd659bd10e1a8, type: 3}
+  - {fileID: 8300000, guid: 031cfe931a775774b9f55605c73b8b54, type: 3}
+  fenceSound:
+  - {fileID: 8300000, guid: d38a1202887a4eb43bdf29f3f0402c9f, type: 3}
+  - {fileID: 8300000, guid: 9204504f5a6462e4395e3cd6c1a992ad, type: 3}
+  - {fileID: 8300000, guid: bafbea9f9fe229545ac877057fe3af2a, type: 3}
+  metalGateHitSound:
+  - {fileID: 8300000, guid: 9145dc1f507f7654dbb4f553d975766b, type: 3}
+  hardFloor:
+  - {fileID: 8300000, guid: 6b398b62fc37d3e48b81748bb23dcc03, type: 3}
+  - {fileID: 8300000, guid: 4cd41304ee08c4640a3407e5745b29df, type: 3}
+  grasFloor:
+  - {fileID: 8300000, guid: 9a9445b577f6e1f4ea79f652ab9196cc, type: 3}
+  - {fileID: 8300000, guid: 2616078ecabdb3d4ea322837b1965e4d, type: 3}
+  hallwayFloor:
+  - {fileID: 8300000, guid: 4cd41304ee08c4640a3407e5745b29df, type: 3}
+  - {fileID: 8300000, guid: 6b398b62fc37d3e48b81748bb23dcc03, type: 3}
+  woodenPlankFloor:
+  - {fileID: 8300000, guid: 935df6fcd54c1724a8c75b45dd13caa6, type: 3}
+  - {fileID: 8300000, guid: 47de827b90d521a4982393d91b4224b1, type: 3}
+  sandFloor:
+  - {fileID: 8300000, guid: e38dc73aba0118b40b935a772f2f1d56, type: 3}
+  - {fileID: 8300000, guid: 669dbb863cb2c0548aaad671980b502a, type: 3}
+  metalCavityFloor:
+  - {fileID: 8300000, guid: 5b4d645711123fd49b79c5c2cf7ee245, type: 3}
+  attorneyVoice:
+  - {fileID: 8300000, guid: 8717ef27f8b575b44a05efe4fe1a0e6b, type: 3}
+  attorneyTaunting:
+  - {fileID: 8300000, guid: 3853611d3aa44b745890b87da20b2bad, type: 3}
+  attorneyGotHit:
+  - {fileID: 8300000, guid: 659c70c3d5507444b82f8eac2d34f765, type: 3}
+  - {fileID: 8300000, guid: 60df5cc8ca3d46c42b382583180a0ad2, type: 3}
+  - {fileID: 8300000, guid: 309e92c3b2ce7304fa38b9a5c5a85646, type: 3}
+  - {fileID: 8300000, guid: 736c6fdfae985914c890465a15ce07fe, type: 3}
+  - {fileID: 8300000, guid: d0e4d1385bfc1a9478afce6a3d61b52e, type: 3}
+  - {fileID: 8300000, guid: 6fe9c3a9c356e2f4c9b597012d790c61, type: 3}
+  attorneyGenericAttack:
+  - {fileID: 8300000, guid: 9145dc1f507f7654dbb4f553d975766b, type: 3}
+  attorneyBlock:
+  - {fileID: 8300000, guid: 2ae05b20f1bca544a9f4777551d5c434, type: 3}
+  attorneyBlockBreak:
+  - {fileID: 8300000, guid: b2ea1f8c2c8da51438cec389d2312a2a, type: 3}
+  attorneyDeath:
+  - {fileID: 8300000, guid: d21ce73d773a4f846808c09e2330f6e4, type: 3}
+  attorneyHeartBeat:
+  - {fileID: 8300000, guid: 0974c52c3d134ca49873e5fde4e312db, type: 3}
+  attorneyheavyBreathing:
+  - {fileID: 8300000, guid: a9151616b7350f74a965f2f7ab8843b9, type: 3}
+  teacherMaleTaunt:
+  - {fileID: 8300000, guid: 01f50cb10c505d14390fb513fc6ba722, type: 3}
+  - {fileID: 8300000, guid: 12758217b5f4d1b4dac1a5ada0064930, type: 3}
+  - {fileID: 8300000, guid: d8d766c376faa124aa97ce9778f6fa0e, type: 3}
+  - {fileID: 8300000, guid: edb16f0c075eebc489561c61b52cff7e, type: 3}
+  - {fileID: 8300000, guid: 665666cc16952244bbc45900cad1afce, type: 3}
+  - {fileID: 8300000, guid: df01a7dec8b5c08459bd1611b52fd576, type: 3}
+  - {fileID: 8300000, guid: ee63b387063492e4c9a543cb3884c2fd, type: 3}
+  - {fileID: 8300000, guid: 38ef6d74b47841f4e98990dac0f34335, type: 3}
+  - {fileID: 8300000, guid: 2815bb0635f261e46b17492b2c3c1c4f, type: 3}
+  - {fileID: 8300000, guid: 702eebe680f3e7b48a4deffd157a7c88, type: 3}
+  - {fileID: 8300000, guid: e0b2f8da63a73e64282d09439b8652c5, type: 3}
+  - {fileID: 8300000, guid: 57985fcc8fe5539408d2a3549569a3c1, type: 3}
+  - {fileID: 8300000, guid: 00483d2934fb68e49979418c49e7974f, type: 3}
+  - {fileID: 8300000, guid: 67c19cb05f98f1142a9e8bdc1198df4f, type: 3}
+  - {fileID: 8300000, guid: 6e2d7d0b67439d644a6a3292fe6ddc97, type: 3}
+  - {fileID: 8300000, guid: f40f680fbc441e8409f5347be55c8446, type: 3}
+  - {fileID: 8300000, guid: 6ce33b60f5b406448ae0386f9f9eb195, type: 3}
+  - {fileID: 8300000, guid: 411f42768458ff144830e06cae9764e5, type: 3}
+  - {fileID: 8300000, guid: 0d90ed0e3f667cd49baab32d3164ac4b, type: 3}
+  - {fileID: 8300000, guid: 79456449416fe9344a96a7cd47802233, type: 3}
+  - {fileID: 8300000, guid: bec21a0474fccf54e8f99e676ac6092b, type: 3}
+  - {fileID: 8300000, guid: 4f15ecf45e6859744a27a35e377479c6, type: 3}
+  - {fileID: 8300000, guid: 10edae955290eb2409d4125690de7eff, type: 3}
+  - {fileID: 8300000, guid: d60b70f9ad0878248b98d5950a21da63, type: 3}
+  - {fileID: 8300000, guid: 824336a00c0d0f845ac2fe6f0b4ed4c2, type: 3}
+  - {fileID: 8300000, guid: 8c2bad8c9e90be04aa7d4d6a419db938, type: 3}
+  - {fileID: 8300000, guid: ad6d44b743c09e346b913614ddf82dec, type: 3}
+  - {fileID: 8300000, guid: 7207e3cefa50f434480a83ab9a804fb6, type: 3}
+  - {fileID: 8300000, guid: 628ebff1a04118b4db179adac5f432b4, type: 3}
+  - {fileID: 8300000, guid: c0366eaca9da9794a94d2037b4ccf59c, type: 3}
+  teacherMaleGotHit:
+  - {fileID: 8300000, guid: 6418fc614cd9bf54a9d87781e48dd660, type: 3}
+  - {fileID: 8300000, guid: e84b158a8cc26bc4ca64a0f95ae368b1, type: 3}
+  - {fileID: 8300000, guid: e349ba8b07a797e49be0b2d793b98412, type: 3}
+  - {fileID: 8300000, guid: 15faadecf931cdf4c8559ee5a9917887, type: 3}
+  - {fileID: 8300000, guid: 29e12ccbe9b76e6439846c3577d76889, type: 3}
+  - {fileID: 8300000, guid: cee49ee5edb4b9e45a3d73776b98899e, type: 3}
+  - {fileID: 8300000, guid: 23649abed6149aa4c9c2577e812c7366, type: 3}
+  - {fileID: 8300000, guid: 3aa374bbde462bf42af282c4bf9f514b, type: 3}
+  - {fileID: 8300000, guid: 7bf24ac4cd979b54796007338f5e155e, type: 3}
+  teacherMaleHit:
+  - {fileID: 8300000, guid: 572c989b28046e942a72433033bdab41, type: 3}
+  - {fileID: 8300000, guid: cb603bd0fe241c54fba97f927b799805, type: 3}
+  - {fileID: 8300000, guid: 119ad74f59de78146a865c0118702aad, type: 3}
+  - {fileID: 8300000, guid: 3fa5f16048cef1648be56661f81900b7, type: 3}
+  - {fileID: 8300000, guid: a20ef64b0b5b5694bb1bc6976d466f22, type: 3}
+  - {fileID: 8300000, guid: 5b040dc72f6c3ef4c851cf034aefb2b8, type: 3}
+  - {fileID: 8300000, guid: 8a5bff668ff7b1e47adc10eee35ad73d, type: 3}
+  - {fileID: 8300000, guid: 2f469bdb3cbe79c4897f7ee88983aaca, type: 3}
+  - {fileID: 8300000, guid: 5d9e0153d10c1354f859b5166d929931, type: 3}
+  - {fileID: 8300000, guid: 5fa5e34e4afdd1044a15d4c489855ed9, type: 3}
+  - {fileID: 8300000, guid: b29ac2e3abf021b41806bced91244206, type: 3}
+  teacherMaleDeath:
+  - {fileID: 8300000, guid: cf0cc0ce55c3770438d8ca87bfc9aa00, type: 3}
+  - {fileID: 8300000, guid: 7a177370a3ecd954a93ee3f6341e4b58, type: 3}
+  - {fileID: 8300000, guid: eed04f135a56de94b9b02d07b249fa5a, type: 3}
+  - {fileID: 8300000, guid: e416f330636671646a40cc6a7d539363, type: 3}
+  - {fileID: 8300000, guid: 2368637368ce92744aa80fcec16a886d, type: 3}
+  teacherFemaleTaunt:
+  - {fileID: 8300000, guid: a769e35513a38ba409bd9940ca79545d, type: 3}
+  - {fileID: 8300000, guid: b7d06c266529e884fbc7f5a663e4b7a2, type: 3}
+  - {fileID: 8300000, guid: 6bf27fab5af3a0a4e89a962e865931cb, type: 3}
+  - {fileID: 8300000, guid: e6fce625676a3694a8f90bc229617c04, type: 3}
+  - {fileID: 8300000, guid: 36646e838eef70341b36b3a642fe8458, type: 3}
+  - {fileID: 8300000, guid: c216c026976ad694b96c2b871231f1a1, type: 3}
+  - {fileID: 8300000, guid: 299f9f53324050540a7e7c934c753d45, type: 3}
+  - {fileID: 8300000, guid: b8273c876c702b647a2968ef1e5bad07, type: 3}
+  - {fileID: 8300000, guid: 81491556f7dd544409763b2398c32304, type: 3}
+  - {fileID: 8300000, guid: 7d8fe1e8c1e82524f842153ec750d4ce, type: 3}
+  - {fileID: 8300000, guid: 700c9c28105b1334b9cd6cd4292126e5, type: 3}
+  - {fileID: 8300000, guid: 46fe9ad19d8204e46897098cb05bb611, type: 3}
+  - {fileID: 8300000, guid: db242f87656c39743a2acc7f36c64cf7, type: 3}
+  - {fileID: 8300000, guid: 4f8edd03703590b4bb540c8e9e73d9ff, type: 3}
+  - {fileID: 8300000, guid: 42a82de26ff16744581bcee89c77fe71, type: 3}
+  - {fileID: 8300000, guid: 765b4784a4ae9424cae20373023e2324, type: 3}
+  - {fileID: 8300000, guid: 57b9b9b3984e8e3469ab6e3723875c63, type: 3}
+  - {fileID: 8300000, guid: 3c6e45de0ceeeb14cbcf48325beea246, type: 3}
+  - {fileID: 8300000, guid: 50392e903a8a2ed4398e502e0d2acfbd, type: 3}
+  - {fileID: 8300000, guid: 38e5ef47fe4317444a5197aed724318d, type: 3}
+  - {fileID: 8300000, guid: ab924b7f5f238a34d9f642f2b05c196d, type: 3}
+  - {fileID: 8300000, guid: b8a62fd4e6738204fbc3d562641a2edc, type: 3}
+  - {fileID: 8300000, guid: b8c52eff422045f4e87d1f6f41aa8054, type: 3}
+  - {fileID: 8300000, guid: e7ce015baed561246901da2f5305dae7, type: 3}
+  - {fileID: 8300000, guid: 4a72120bd6cba454da48d8213d935901, type: 3}
+  - {fileID: 8300000, guid: 3d62dd3e514cc7a4f935b3b1c7adddfc, type: 3}
+  - {fileID: 8300000, guid: 4c9e83058dc843c45acdd109ba174ee1, type: 3}
+  - {fileID: 8300000, guid: 5dd8796d2c81f754d8283426743875b4, type: 3}
+  - {fileID: 8300000, guid: ecbb2645c6db59346b0c0ca8e2fb5b26, type: 3}
+  - {fileID: 8300000, guid: 1e74d840e67ba1343b4742951e501a70, type: 3}
+  teacherFemaleGotHit:
+  - {fileID: 8300000, guid: 2ad0634502d57d84b9845f85cca511b0, type: 3}
+  - {fileID: 8300000, guid: 58a9c56886d48614da3a060e63c011c4, type: 3}
+  - {fileID: 8300000, guid: 1e246c8cdfce7af4490f0c9b8f498b66, type: 3}
+  - {fileID: 8300000, guid: 91c2d123942d60a48b23ad6747a1d8d3, type: 3}
+  - {fileID: 8300000, guid: 6352519f5a86d23439d421877e13f178, type: 3}
+  - {fileID: 8300000, guid: 35b670454c64c3a45aa044dc38eb4cb0, type: 3}
+  - {fileID: 8300000, guid: 7bcbe4e37ab732847ae119421e39f935, type: 3}
+  teacherFemaleHit:
+  - {fileID: 8300000, guid: d5db209e2b5f9804ab5888fd29d1b549, type: 3}
+  - {fileID: 8300000, guid: c9fd5a904c9e0f84d8da1f4dc5b5a3ba, type: 3}
+  - {fileID: 8300000, guid: 8e88008d08f178540985dad206d61b3c, type: 3}
+  - {fileID: 8300000, guid: a7aa92d4c0edb8046ad7734a214669da, type: 3}
+  - {fileID: 8300000, guid: 7dc5f31d13a14b34a8398d2be8bfa189, type: 3}
+  - {fileID: 8300000, guid: 9c98432277fbac347983ec0774fc6b17, type: 3}
+  - {fileID: 8300000, guid: 136661087ec7926498b2602800b1629e, type: 3}
+  - {fileID: 8300000, guid: 66fe33423dda49348ad142c848c2eef6, type: 3}
+  - {fileID: 8300000, guid: 294952576e50622438e5a7c05e1743e7, type: 3}
+  - {fileID: 8300000, guid: fe1fc39763cf23544896288b043cefd3, type: 3}
+  - {fileID: 8300000, guid: 4690bd3ef7649e14da8ca8ac606674e9, type: 3}
+  - {fileID: 8300000, guid: 65906406a7e862348b136eaa47ba2128, type: 3}
+  - {fileID: 8300000, guid: ae13231c09308c14caa53185b4cc8ff1, type: 3}
+  - {fileID: 8300000, guid: aa8339ad68d35b747bfe6af6dbdf5e53, type: 3}
+  teacherFemaleDeath:
+  - {fileID: 8300000, guid: 1ae0f0abcb2fa8349a1dd1b852d8b3e4, type: 3}
+  - {fileID: 8300000, guid: c60b962ed35aec6449b2728fb13f22b2, type: 3}
+  - {fileID: 8300000, guid: ab7b358d8f7a3bc45b212a228b8ce18a, type: 3}
+  - {fileID: 8300000, guid: b4e93c4ee46983f4aac11be7cd9021a8, type: 3}
+  - {fileID: 8300000, guid: 5aa21928013e9384b8d7a03e0159a6d6, type: 3}
+  - {fileID: 8300000, guid: e36747cfa814b104484f87d73d8840db, type: 3}
+  - {fileID: 8300000, guid: c348aeeee7d24754b83f6ffb82dbcd0c, type: 3}
+  - {fileID: 8300000, guid: 88ef8a316f360bb40973cfcd6e6fee44, type: 3}
+  - {fileID: 8300000, guid: ff478fa4bca0d7243a0377d7a61ead7a, type: 3}
+  - {fileID: 8300000, guid: d0af72ec7da85bf4fb5c3a8f414c0de8, type: 3}
+  childHelpVoice:
+  - {fileID: 8300000, guid: 1737f56f0bc528c4ea9a1d7a1a91160d, type: 3}
+  childCheersVoice:
+  - {fileID: 8300000, guid: 7b44fdf8d67f35f4fafd9b7503a8b926, type: 3}
