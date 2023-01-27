@@ -297,13 +297,13 @@ public class PlayerStateMachine : MonoBehaviour
 
         HandleLowLife();
 
-        HandleCameraShake();
+        
     }
 
     private void FixedUpdate()
     {
 
-
+        HandleCameraShake();
         HandleRotation();
         HandleMovement();
         _currentState.UpdateStatePhysics(); // Updated sowohl SuperStates als auch SubStates aus dem BaseState heraus

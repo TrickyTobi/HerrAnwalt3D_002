@@ -17,17 +17,10 @@ public class PlayerWalkState : PlayerBaseState
     }
     public override void UpdateState() //Wird jeden Frame aufgerufen
     {
-        SpeedControl();
+
+
         HandleAnimation();
 
-        /*if (_ctx.IsAttackPressed && !_ctx.IsAttacking && !_ctx.IsBlockPressed)
-        {
-            _ctx.IsAttacking = true;
-
-            _ctx.Animator.SetBool(_ctx.IsAttackHash, true);
-            _ctx.Animator.SetLayerWeight(_ctx.AnimHandsLayer, Mathf.Lerp(_ctx.Animator.GetLayerWeight(_ctx.AnimHandsLayer), 1, Time.deltaTime * 20));
-        }*/
-        
         _ctx.HandleAttack();
 
         _ctx.HandleBlock();
@@ -38,7 +31,7 @@ public class PlayerWalkState : PlayerBaseState
 
     public override void UpdatePhysics() //Wird bei Physikalischen änderungen aufgerufen
     {
-        ;
+        SpeedControl();
     }
 
     public override void CheckSwitchState() //checkt ob der SubState geändert werden muss
@@ -100,8 +93,8 @@ public class PlayerWalkState : PlayerBaseState
         if (_ctx.VelocityZ <= _ctx.ZeroThreshold && _ctx.VelocityZ >= -_ctx.ZeroThreshold && !_ctx.MoveForward && !_ctx.MoveBackward) // Wenn weder Vor, noch Zurück und die Geschwindigleit kleiner als 0.05 ist
             _ctx.VelocityZ = 0;
 
-        _ctx.Animator.SetFloat(_ctx.VelocityXHash, _ctx.VelocityX);
-        _ctx.Animator.SetFloat(_ctx.VelocityZHash, _ctx.VelocityZ);
+        _ctx.Animator.SetFloat(_ctx.VelocityXHash, _ctx.VelocityX, 0.2f, Time.deltaTime);
+        _ctx.Animator.SetFloat(_ctx.VelocityZHash, _ctx.VelocityZ, 0.2f, Time.deltaTime);
     }
 
 

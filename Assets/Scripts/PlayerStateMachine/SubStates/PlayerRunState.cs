@@ -106,8 +106,8 @@ public class PlayerRunState : PlayerBaseState
         if (_ctx.VelocityZ <= _ctx.ZeroThreshold && _ctx.VelocityZ >= -_ctx.ZeroThreshold && !_ctx.MoveForward && !_ctx.MoveBackward) // Wenn weder Vor, noch Zurück und die Geschwindigleit kleiner als 0.05 ist
             _ctx.VelocityZ = 0;
 
-        _ctx.Animator.SetFloat(_ctx.VelocityXHash, _ctx.VelocityX);
-        _ctx.Animator.SetFloat(_ctx.VelocityZHash, _ctx.VelocityZ);
+        _ctx.Animator.SetFloat(_ctx.VelocityXHash, _ctx.VelocityX, 0.2f, Time.deltaTime);
+        _ctx.Animator.SetFloat(_ctx.VelocityZHash, _ctx.VelocityZ, 0.2f, Time.deltaTime);
     }
 
 
