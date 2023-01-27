@@ -14,16 +14,6 @@ public class OptionController : MonoBehaviour
     public Sprite _unMutedSprite;
     [SerializeField] Image _muteImage;
 
-    void Start()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void ShowOption()
-    {
-        gameObject.SetActive(true);
-    }
-
     public void CloseOption()
     {
         gameObject.SetActive(false);
