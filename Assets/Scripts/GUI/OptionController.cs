@@ -14,10 +14,11 @@ public class OptionController : MonoBehaviour
     public Sprite _unMutedSprite;
     [SerializeField] Image _muteImage;
 
-    public void CloseOption()
+    private void Start()
     {
-        gameObject.SetActive(false);
+        volume.value = _optionsSO.Volume;
     }
+
 
     public void AdjustVolume()
     {
@@ -43,8 +44,5 @@ public class OptionController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        volume.value = _optionsSO.Volume;
-    }
+
 }

@@ -19,7 +19,7 @@ public class OptionsSO : ScriptableObject
     [Space(20)]
     [SerializeField] bool _showLoadingScreen; public bool ShowLoadingScreen { get => _showLoadingScreen; set => _showLoadingScreen = value; }
     [SerializeField] bool _debug; public bool Debug { get => _debug; set => _debug = value; }
-    float _volume; public float Volume { get { return _volume; } set { _volume = value; UpdateVolume(); } }
+    [SerializeField] float _volume; public float Volume { get { return _volume; } set { _volume = value; UpdateVolume(); } }
 
     [SerializeField] float _testVolume;
     [SerializeField] bool _muted = false; public bool Muted { get { return _muted; } set { _muted = value; UpdateVolume(); } }

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: OptionsSO
   m_EditorClassIdentifier: 
   mouseSensetivity: 1.2949393
-  _showLoadingScreen: 1
+  _showLoadingScreen: 0
   _debug: 0
-  _testVolume: 5.0246325
+  _volume: 0.53606933
+  _testVolume: 5.3606935
   _muted: 0
   _backgroundMusicVolume: 0.02
   _fightMusicVolume: 0.11
