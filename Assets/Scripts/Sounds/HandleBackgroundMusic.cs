@@ -56,7 +56,8 @@ public class HandleBackgroundMusic : MonoBehaviour
 
     void GameChecker()
     {
-        this.gameObject.SetActive(false);
+        _fightMusic.volume = 0;
+        this.enabled = false;
     }
 
     private void OnDisable()

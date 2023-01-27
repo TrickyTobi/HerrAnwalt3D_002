@@ -15,12 +15,18 @@ public class ChildPole : MonoBehaviour
     [SerializeField] float _explosionRadius;
     [SerializeField] float _explosionUpward;
 
+    bool _freed = false;
+
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("BookWeapon") || !other.GetComponentInParent<PlayerStateMachine>().IsAttacking)
+        if (!other.CompareTag("BookWeapon") || !other.GetComponentInParent<PlayerStateMachine>().IsAttacking || _freed)
             return;
+
+        _freed = true;
+
+        _playerStatsSO.FreedChilds++;
 
         _ropeCell.SetActive(true);
         _ropeComplete.SetActive(false);

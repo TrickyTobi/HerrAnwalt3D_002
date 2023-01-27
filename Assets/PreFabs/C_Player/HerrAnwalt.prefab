@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 244753280}
   - component: {fileID: 244753281}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AimTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244753279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.697, z: 1.4189996}
+  m_LocalPosition: {x: 0, y: 1.697, z: 1.4190063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896534925}
   - component: {fileID: 896534924}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5378669431302883552}
   - component: {fileID: 2556044703354685844}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Pants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,8 @@ GameObject:
   - component: {fileID: 4726810156207693745}
   - component: {fileID: 7364941757380385851}
   - component: {fileID: 1214655015336102998}
-  m_Layer: 7
+  - component: {fileID: 1108206610}
+  m_Layer: 0
   m_Name: Grundgesetz
   m_TagString: BookWeapon
   m_Icon: {fileID: 0}
@@ -887,6 +888,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.59, y: 0.06, z: 0.95}
   m_Center: {x: 0.15, y: 0, z: -0.28}
+--- !u!114 &1108206610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955416408518767032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a91ceb5eacb3c74e908465bcee8c2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _optionsSO: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
+  _soundEffectSO: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
 --- !u!1 &2037590924005433819
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037590924005433816}
   - component: {fileID: 2037590924005433817}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: TrailPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,7 +1096,7 @@ GameObject:
   - component: {fileID: 701232079458466946}
   m_Layer: 0
   m_Name: Player_PostProcess
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +1518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3632456771817380153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7189999, z: 0.189}
+  m_LocalPosition: {x: 0, y: 1.7189999, z: 0.18899536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1778,7 +1793,7 @@ GameObject:
   - component: {fileID: 2019089192595177850}
   - component: {fileID: 6314791050431261962}
   - component: {fileID: 8827855991372135163}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Beard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2257,7 +2272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5436110012904790078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7189999, z: 0.189}
+  m_LocalPosition: {x: 0, y: 1.7189999, z: 0.18899536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2505,9 +2520,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9137541264214853193}
   - component: {fileID: 1920230110}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CameraFollowFPS
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2520,7 +2535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6159262266450945122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.719, z: 0.189}
+  m_LocalPosition: {x: 0, y: 1.7189999, z: 0.189}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2537,10 +2552,10 @@ ParentConstraint:
   m_GameObject: {fileID: 6159262266450945122}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 1.719, z: 0.189}
+  m_TranslationAtRest: {x: 0, y: 1.7189999, z: 0.189}
   m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0.0000011455268, y: 0.11215019, z: 0.21646377}
+  - {x: 0.0000011455268, y: 0.11215019, z: 0.21646118}
   m_RotationOffsets:
   - {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -2950,9 +2965,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7704087644198950893}
   - component: {fileID: 536123684}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3279,8 +3294,8 @@ MonoBehaviour:
   _groundCheckTransform: {fileID: 7704087644198950893}
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 257
-  _groundCheckDistance: 0.06
+    m_Bits: 256
+  _groundCheckDistance: 0.05
   _groundCheckRadius: 0.23
   _maxUpLookAngle: 80
   _maxDownLookAngle: -80
@@ -3305,7 +3320,6 @@ MonoBehaviour:
   _shakeAmount: 1
   _decreseFactor: 1
   _shakeDuration: 0
-  _audioMaxBreathVolume: 0
   _mediumHeartBeatVolume: 0
   _heavyHeartBeatVolume: 0
 --- !u!114 &3099346414475233278
@@ -3323,9 +3337,9 @@ MonoBehaviour:
   boneShape: 1
   drawBones: 1
   drawTripods: 0
-  boneSize: 1
+  boneSize: 2.22
   tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  boneColor: {r: 0, g: 0.8727236, b: 1, a: 0.5}
   m_Transforms:
   - {fileID: 3851817172961054019}
   - {fileID: 6713428985375683647}
@@ -3684,6 +3698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootSoundTrigger Left
       objectReference: {fileID: 0}
+    - target: {fileID: 4588933398326018442, guid: 0bad7116e2676c04daa1b66a2d52d1c4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bad7116e2676c04daa1b66a2d52d1c4, type: 3}
 --- !u!4 &238371528148461951 stripped
@@ -3745,6 +3763,10 @@ PrefabInstance:
     - target: {fileID: 4588933398326018442, guid: 0bad7116e2676c04daa1b66a2d52d1c4, type: 3}
       propertyPath: m_Name
       value: FootSoundTrigger Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588933398326018442, guid: 0bad7116e2676c04daa1b66a2d52d1c4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bad7116e2676c04daa1b66a2d52d1c4, type: 3}

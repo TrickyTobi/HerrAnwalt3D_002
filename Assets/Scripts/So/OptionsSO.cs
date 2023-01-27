@@ -24,6 +24,8 @@ public class OptionsSO : ScriptableObject
     [SerializeField] float _testVolume;
     [SerializeField] bool _muted = false; public bool Muted { get { return _muted; } set { _muted = value; UpdateVolume(); } }
 
+    [SerializeField] float _childNoticeVolume; public float ChildNoticeVolume { get { return _childNoticeVolume; } set { _childNoticeVolume = value; } }
+
     [Space(40)]
     [Header("Sound")]
     [Space(20)]

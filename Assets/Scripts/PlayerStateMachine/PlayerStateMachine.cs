@@ -274,6 +274,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void Update()
     {
+        GroundCheck();
 
         if (_isGrounded)
         {
@@ -297,7 +298,7 @@ public class PlayerStateMachine : MonoBehaviour
 
         HandleLowLife();
 
-        
+
     }
 
     private void FixedUpdate()
@@ -311,7 +312,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void LateUpdate()
     {
-        GroundCheck();
+
     }
 
     void OnMovementInput(InputAction.CallbackContext context)
@@ -393,7 +394,6 @@ public class PlayerStateMachine : MonoBehaviour
         _rigidBody.AddForce(_moveDirection.normalized * _walkForce, ForceMode.Acceleration);
 
     }
-
     void GroundCheck()
     {
         _isGrounded = Physics.SphereCast(_groundCheckTransform.position,

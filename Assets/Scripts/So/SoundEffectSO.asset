@@ -28,6 +28,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bafbea9f9fe229545ac877057fe3af2a, type: 3}
   metalGateHitSound:
   - {fileID: 8300000, guid: 9145dc1f507f7654dbb4f553d975766b, type: 3}
+  childNoticeSound:
+  - {fileID: 8300000, guid: c50b024492539934792c257ee283c4b5, type: 3}
+  - {fileID: 8300000, guid: 9a3356e6a15c77e468a7a7c6d064e0f3, type: 3}
+  - {fileID: 8300000, guid: eb2b73d7a2a5d5945a8e25f6c548acde, type: 3}
+  - {fileID: 8300000, guid: f9f6f991282ac344784cf012341d41a3, type: 3}
+  - {fileID: 8300000, guid: 6e9d469345188814e918bd3023bdd69f, type: 3}
   hardFloor:
   - {fileID: 8300000, guid: 6b398b62fc37d3e48b81748bb23dcc03, type: 3}
   - {fileID: 8300000, guid: 4cd41304ee08c4640a3407e5745b29df, type: 3}

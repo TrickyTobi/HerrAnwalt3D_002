@@ -18,11 +18,12 @@ public class PlayerStatsSO : ScriptableObject
     [SerializeField] int _playerParagraphCount;
     public int PlayerParagraphCount { get => _playerParagraphCount; set { _playerParagraphCount = value; } }
 
-
-
-
-
     [SerializeField] int _paragraphsToAddLife;
+
+    [SerializeField] int _freedChilds; public int FreedChilds { get => _freedChilds; set => _freedChilds = value; }
+    [SerializeField] int _childsToFree; public int ChildsToFree { get => _childsToFree; }
+
+    
 
 
 

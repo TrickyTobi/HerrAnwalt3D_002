@@ -24,6 +24,9 @@ public class SoundEffectSO : ScriptableObject
     [Space(10)]
     public AudioClip[] metalGateHitSound;
     [Space(10)]
+    public AudioClip[] childNoticeSound;
+    [Space(10)]
+
 
 
     [Space(20)]
@@ -131,6 +134,28 @@ public class SoundEffectSO : ScriptableObject
     {
         return metalGateHitSound[Random.Range(0, metalGateHitSound.Length)];
     }
+
+
+    public AudioClip ChildNotice(int _number)
+    {
+        switch (_number)
+        {
+            case 1:
+                return childNoticeSound[0];
+            case 2:
+                return childNoticeSound[1];
+            case 3:
+                return childNoticeSound[2];
+            case 4:
+                return childNoticeSound[3];
+            case 5:
+                return childNoticeSound[4];
+            default:
+                return childNoticeSound[0];
+        }
+    }
+
+
 
     public AudioClip StepSound(GameObject floor)
     {

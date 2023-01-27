@@ -39,27 +39,27 @@ public class GameEndController : MonoBehaviour
         if (other.CompareTag("Player") && !_videoPlayed)
         {
             _event.DisableInput();
+            _event.GameEnded();
 
             _backgroundMusic.volume = 0f;
+
             _endVideoPlayer.SetActive(true);
             _canvas.SetActive(false);
             _videoPlayed = true;
-            _endVideoPlayer.SetActive(true);
+
             StartCoroutine(stopEndVideoClip());
-            _canvas.SetActive(false);
         }
     }
 
     IEnumerator stopEndVideoClip()
     {
-        yield return new WaitForSeconds((float)_endVideo.clip.length - 0.4f);
+        yield return new WaitForSeconds((float)_endVideo.clip.length);
 
         _backgroundMusic.volume = _options.BackgroundMusicVolume;
-
-        yield return new WaitForSeconds(0.4f);
-
+        yield return new WaitForSeconds(0.2f);
         _endImage.SetActive(true);
         _endVideoPlayer.SetActive(false);
+
         Cursor.lockState = CursorLockMode.None;
     }
 
