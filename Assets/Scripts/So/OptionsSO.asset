@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensetivity: 1.1635945
   _showLoadingScreen: 1
-  _debug: 1
-  _volume: 0.5365815
+  _debug: 0
+  _volume: 0.4
   _testVolume: 5.365815
   _muted: 0
-  _childNoticeVolume: 0.2
+  _childNoticeVolume: 0.17
   _backgroundMusicVolume: 0.02
   _fightMusicVolume: 0.11
   _endvideoVolume: 0.05
