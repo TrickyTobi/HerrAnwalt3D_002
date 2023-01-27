@@ -3,7 +3,11 @@ guid: b5d261c467ba2764f86530594fd14a52
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _playerStatsSO: {fileID: 11400000, guid: 555af2bef029d5441ba84ed0d7607902, type: 2}
+  - _soundEffectSO: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
+  - _optionsSO: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
+  - _endWayPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

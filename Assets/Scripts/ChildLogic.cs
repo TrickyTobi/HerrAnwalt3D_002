@@ -140,7 +140,7 @@ public class ChildLogic : MonoBehaviour
 
         _audioUtilityPlayer = gameObject.AddComponent<AudioSource>();
         _audioUtilityPlayer.spatialBlend = 1;
-        _audioUtilityPlayer.maxDistance = 20;
+        _audioUtilityPlayer.maxDistance = 10;
 
         _soundInterval += Random.Range(0f, 15f);
 

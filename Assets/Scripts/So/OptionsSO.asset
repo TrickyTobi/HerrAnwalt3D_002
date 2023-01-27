@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: OptionsSO
   m_EditorClassIdentifier: 
   mouseSensetivity: 1.2949393
-  _showLoadingScreen: 0
-  _debug: 1
-  _testVolume: 4.977962
+  _showLoadingScreen: 1
+  _debug: 0
+  _testVolume: 5.0246325
   _muted: 0
-  _backgroundMusicVolume: 0.011
+  _backgroundMusicVolume: 0.02
   _fightMusicVolume: 0.11
-  _endvideoVolume: 0.09
+  _endvideoVolume: 0.05
   _loadingScreenVolume: 0.2
-  _laptopVolume: 0.6
+  _laptopVolume: 0.25
   volumeCorrectionMultiplier: 10
   _stepVolume: 0.02
   _genericAttackVolume: 0.3
@@ -34,7 +34,7 @@ MonoBehaviour:
   _childHelpVolume: 0.2
   _childCheeringVolume: 0.2
   _fenceHitVolume: 0.2
-  _teacherGotHitVolume: 0.2
+  _teacherGotHitVolume: 0.35
   _teacherTauntingVolume: 1
   _teacherAttackVolume: 0.4
   _teacherHitVolume: 0.1

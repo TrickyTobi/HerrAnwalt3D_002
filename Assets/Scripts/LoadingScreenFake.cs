@@ -23,7 +23,7 @@ public class LoadingScreenFake : MonoBehaviour
     {
         _music = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
         _player = GameObject.Find("HerrAnwalt").GetComponent<PlayerStateMachine>();
-        _gameUI = GameObject.Find("3D Canvas");
+        //_gameUI = GameObject.Find("3D Canvas");
         _video = GetComponent<VideoPlayer>();
         _audio = GetComponent<AudioSource>();
 
@@ -51,7 +51,7 @@ public class LoadingScreenFake : MonoBehaviour
             _player.DisableInput();
             _pauseScreen.DisableInput();
             _music.volume = 0;
-            _gameUI.SetActive(false);
+            //_gameUI.SetActive(false);
             _options.ShowLoadingScreen = false;
 
 
@@ -85,7 +85,7 @@ public class LoadingScreenFake : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         _music.volume = _options.BackgroundMusicVolume;
-        _gameUI.SetActive(true);
+        //_gameUI.SetActive(true);
         _player.enabled = true;
         _event.EnableInput();
         _pauseScreen.EnableInput();
