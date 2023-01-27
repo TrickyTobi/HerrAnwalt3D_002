@@ -522,7 +522,7 @@ public class TeacherLogic : MonoBehaviour
     {
         _damageActive = false;
     }
-
+#if (UNITY_EDITOR)
     private void OnDrawGizmosSelected()
     {
         if (!EditorApplication.isPlaying)
@@ -540,7 +540,7 @@ public class TeacherLogic : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + new Vector3(0, 1, 0), _attackRange);
     }
 
-
+#endif
     void GameChecker()
     {
         this.gameObject.SetActive(false);
