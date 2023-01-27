@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4893117788104852119}
   - component: {fileID: 7206656596660876893}
   - component: {fileID: 4920870748720998545}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SchoolWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

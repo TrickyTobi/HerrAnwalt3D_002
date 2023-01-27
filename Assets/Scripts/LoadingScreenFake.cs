@@ -51,7 +51,6 @@ public class LoadingScreenFake : MonoBehaviour
             _player.DisableInput();
             _pauseScreen.DisableInput();
             _music.volume = 0;
-            //_gameUI.SetActive(false);
             _options.ShowLoadingScreen = false;
 
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784599467529586053}
   - component: {fileID: 1734758760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Swing_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 784599467562147632}
   - component: {fileID: 784599467562147633}
   - component: {fileID: 784599467562147646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stand_2
   m_TagString: hitable
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 784599467774563559}
   - component: {fileID: 784599467774563556}
   - component: {fileID: 99812276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 784599467792997215}
   - component: {fileID: 784599467792997212}
   - component: {fileID: 826648962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rope2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 784599468249265515}
   - component: {fileID: 784599468249265512}
   - component: {fileID: 1469249838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rope_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784599468249265430}
   m_LocalRotation: {x: -1, y: 0.000000029802322, z: -0.000000029802322, w: 0.00000008940697}
-  m_LocalPosition: {x: -0, y: 0.00185, z: -0.0502}
+  m_LocalPosition: {x: 0.005, y: 0.00185, z: -0.046}
   m_LocalScale: {x: 0.20017536, y: 0.010942458, z: 4.74}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784599468830555011}
   - component: {fileID: 1551158484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Swing_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784599469292716786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Swing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 784599469292716787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1945, y: 1.1945, z: 1.1945}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8461018817066578156}
@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 214784097696293138}
   - component: {fileID: 777211205643026021}
   - component: {fileID: 2933299085535720758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anchor Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 20
-    damper: 3
+    damper: 1
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -630,7 +630,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 20
-    damper: 3
+    damper: 1
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 3769486365143889430}
   - component: {fileID: 4548369130695220960}
   - component: {fileID: 456539348161637600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rope2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 3229419499340646939}
   - component: {fileID: 6137388677413092485}
   - component: {fileID: 2317787656440406106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CrossBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 6641960426686017527}
   - component: {fileID: 9172271054482650301}
   - component: {fileID: 1053584441848586414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rope_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 2751046587326555780}
   - component: {fileID: 9010523363891338799}
   - component: {fileID: 9010523363891338798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stand_1
   m_TagString: hitable
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 3957648381304330565}
   - component: {fileID: 7619817197609275736}
   - component: {fileID: 4605841148178300252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

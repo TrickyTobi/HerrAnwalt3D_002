@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Sockets;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations.Rigging;
-using UnityEngine.Experimental.AI;
 
 public class TeacherLogic : MonoBehaviour
 {
     #region References
-    Rigidbody _rigidBody; public Rigidbody Rigidbody { get { return _rigidBody; } }
-    Animator _animator; public Animator Animator { get => _animator; }
-
+    Rigidbody _rigidBody;
+    Animator _animator;
     CapsuleCollider _teacherCollider;
 
     [SerializeField] PlayerStatsSO _playerStatsSO;
@@ -36,22 +32,22 @@ public class TeacherLogic : MonoBehaviour
     [Space(10)]
     [Header("Walking")]
     [Space(10)]
-    [SerializeField] float _maxWalkSpeed; public float MaxWalkSpeed { get => _maxWalkSpeed; }
+    [SerializeField] float _maxWalkSpeed;
 
-    [SerializeField] float _maxRunSpeed; public float MaxRunSpeed { get => _maxRunSpeed; }
+    [SerializeField] float _maxRunSpeed;
 
     Vector3 _moveDirection;
 
-    private bool _moveForward; public bool MoveForward { get => _moveForward; set => _moveForward = value; }
+    private bool _moveForward;
 
 
-    private bool _moveBackward; public bool MoveBackward { get => _moveBackward; set => _moveBackward = value; }
+    private bool _moveBackward;
 
 
-    private bool _moveLeft; public bool MoveLeft { get => _moveLeft; set => _moveLeft = value; }
+    private bool _moveLeft;
 
 
-    private bool _moveRight; public bool MoveRight { get => _moveRight; set => _moveRight = value; }
+    private bool _moveRight;
 
 
 
@@ -65,50 +61,42 @@ public class TeacherLogic : MonoBehaviour
     [Header("Animation")]
     [Space(10)]
 
-    [SerializeField] float _velocityX = 0; public float VelocityX { get => _velocityX; set => _velocityX = value; }
+    [SerializeField] float _walkAnimMultiplicator;
 
-    [SerializeField] float _velocityZ = 0; public float VelocityZ { get => _velocityZ; set => _velocityZ = value; }
+    [SerializeField] float _acceleration; public float Acceleration { get => _acceleration; }
 
-    [SerializeField] float _walkAnimMultiplicator; public float WalkAnimMultiplicator { get => _walkAnimMultiplicator; set => _walkAnimMultiplicator = value; }
+    [SerializeField] float _deceleration; public float Deceleration { get => _deceleration; }
 
-    [SerializeField] float _acceleration; public float Acceleration { get => _acceleration; set => _acceleration = value; }
+    [SerializeField] float _walkThreshhold; public float WalkThreshhold { get => _walkThreshhold; }
 
-    [SerializeField] float _deceleration; public float Deceleration { get => _deceleration; set => _deceleration = value; }
+    [SerializeField] float _runThreshold; public float RunThreshold { get => _runThreshold; }
 
-    [SerializeField] float _walkThreshhold; public float WalkThreshhold { get => _walkThreshhold; set => _walkThreshhold = value; }
-
-    [SerializeField] float _runThreshold; public float RunThreshold { get => _runThreshold; set => _runThreshold = value; }
-
-    [SerializeField] float _zeroThreshold; public float ZeroThreshold { get => _zeroThreshold; set => _zeroThreshold = value; }
+    [SerializeField] float _zeroThreshold; public float ZeroThreshold { get => _zeroThreshold; }
 
     [SerializeField] float _defaultAnimationWeight = 0.6f; public float DefaultAnimationWeight { get => _defaultAnimationWeight; }
 
     [SerializeField] int _animHandsLayer; public int AnimHandsLayer { get => _animHandsLayer; }
 
-    int _isWalkingHash; public int IsWalkingHash { get { return _isWalkingHash; } set { _isWalkingHash = value; } }
+    int _isWalkingHash;
 
-    int _isRunnningHash; public int IsRunningHash { get { return _isRunnningHash; } set { _isRunnningHash = value; } }
+    int _isRunningHash;
 
-    int _isJumpHash; public int IsJumpHash { get { return _isJumpHash; } set { _isJumpHash = value; } }
-
-    int _isAttackHash; public int IsAttackHash { get { return _isAttackHash; } set { _isAttackHash = value; } }
+    int _isAttackHash;
     int _inAttackHash; public int InAttackHash { get { return _inAttackHash; } set { _inAttackHash = value; } }
 
-    int _attackModeHash; public int AttackModeHash { get { return _attackModeHash; } set { _attackModeHash = value; } }
+    int _attackModeHash;
 
-    int _isBlockHash; public int IsBlockHash { get { return _isBlockHash; } set { _isBlockHash = value; } }
+    int _gotHitHash; public int GotHitHash { get { return _gotHitHash; } }
+    int _velocityXHash;
 
-    int _gotHitHash; public int GotHitHash { get { return _gotHitHash; } set { _gotHitHash = value; } }
-    int _velocityXHash; public int VelocityXHash { get { return _velocityXHash; } set { _velocityXHash = value; } }
+    int _velocityZHash;
 
-    int _velocityZHash; public int VelocityZHash { get { return _velocityZHash; } set { _velocityZHash = value; } }
-
-    int _isDyingHash; public int IsDyingHash { get { return _isDyingHash; } set { _isDyingHash = value; } }
+    int _isDyingHash;
 
     int _deathNumberHash; public int DeathNumberHash { get { return _deathNumberHash; } set { _deathNumberHash = value; } }
 
-    bool _dying; public bool Dying { get { return _dying; } set { _dying = value; } }
-    float _deathNumber; public float DeathNumber { get { return _deathNumber; } set { _deathNumber = value; } }
+    bool _dying;
+    float _deathNumber;
 
     [SerializeField] int _availableDeaths;
 
@@ -126,20 +114,19 @@ public class TeacherLogic : MonoBehaviour
     [Space(10)]
 
     [SerializeField] float _health; public float Health { get => _health; set => _health = value; }
-    [SerializeField] float _timeBetweenAttacks; public float TimeBetweenAttacks { get { return _timeBetweenAttacks; } }
+    [SerializeField] float _timeBetweenAttacks;
 
     [Space(10)]
     bool _attackTimeout;
 
     bool _damageActive = false; public bool DamageActive { get => _damageActive; }
     bool _alreadyHit = false; public bool AlreadyHit { get => _alreadyHit; set => _alreadyHit = value; }
-    bool _attackEnding = false; public bool AttackEnding { get => _attackEnding; set => _attackEnding = value; }
+    bool _attackEnding = false;
 
-    bool _attackStarting = false; public bool AttackStarting { get => _attackStarting; set => _attackStarting = value; }
+    bool _attackStarting = false;
 
-    bool _attackEnded = false; public bool AttackEnded { get => _attackEnded; set => _attackEnded = value; }
     bool _isAttacking; public bool IsAttacking { get { return _isAttacking; } set { _isAttacking = value; } }
-    bool _isBlockPressed; public bool IsBlockPressed { get { return _isBlockPressed; } set { _isBlockPressed = value; } }
+    bool _isBlockPressed;
 
 
 
@@ -215,9 +202,7 @@ public class TeacherLogic : MonoBehaviour
 
     void Update()
     {
-        //leaves the headtarget always on the player
         _headTarget.position = _player.transform.position + Vector3.up * 1.578f;
-
 
         if (_dying)
         {
@@ -300,8 +285,6 @@ public class TeacherLogic : MonoBehaviour
 
         if (distanceToWalkPoint.magnitude <= 0.5f)
             _walkPointSet = false;
-
-
     }
 
     IEnumerator SearchWalkPoint()
@@ -334,7 +317,6 @@ public class TeacherLogic : MonoBehaviour
 
     void AttackPlayer()
     {
-
         _aimConstraing.weight = Mathf.Lerp(_aimConstraing.weight, 1, 30f * Time.deltaTime);
         transform.LookAt(_player);
 
@@ -390,6 +372,8 @@ public class TeacherLogic : MonoBehaviour
     {
         if (_dying)
             return;
+
+        _damageActive = false;
 
         StopCoroutine(TauntRoutine());
         _audioStreamPlayer.Stop();
@@ -452,17 +436,15 @@ public class TeacherLogic : MonoBehaviour
     void SetupAnimator()
     {
         _animator = GetComponent<Animator>();
-        IsWalkingHash = Animator.StringToHash("isWalking");
-        IsRunningHash = Animator.StringToHash("isRunning");
-        IsAttackHash = Animator.StringToHash("isAttack");
-        InAttackHash = Animator.StringToHash("inAttack");
-        IsBlockHash = Animator.StringToHash("isBlock");
-        IsJumpHash = Animator.StringToHash("isJumping");
-        VelocityXHash = Animator.StringToHash("velocityX");
-        VelocityZHash = Animator.StringToHash("velocityZ");
-        IsDyingHash = Animator.StringToHash("isDying");
-        DeathNumberHash = Animator.StringToHash("deathNumber");
-        GotHitHash = Animator.StringToHash("gotHit");
+        _isWalkingHash = Animator.StringToHash("isWalking");
+        _isRunningHash = Animator.StringToHash("isRunning");
+        _isAttackHash = Animator.StringToHash("isAttack");
+        _inAttackHash = Animator.StringToHash("inAttack");
+        _velocityXHash = Animator.StringToHash("velocityX");
+        _velocityZHash = Animator.StringToHash("velocityZ");
+        _isDyingHash = Animator.StringToHash("isDying");
+        _deathNumberHash = Animator.StringToHash("deathNumber");
+        _gotHitHash = Animator.StringToHash("gotHit");
 
 
     }

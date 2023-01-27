@@ -11,7 +11,7 @@ public class PlayerStatsSO : ScriptableObject
     public int PlayerHealth { get => _playerHealth; set => _playerHealth = value; }
     [SerializeField] int _playerHealth;
 
-    public int PlayerMaxHealth { get => _playerMaxHealth; set => _playerMaxHealth = value; }
+    public int PlayerMaxHealth { get => _playerMaxHealth; }
     [SerializeField] int _playerMaxHealth;
 
 

@@ -22,9 +22,9 @@ public class OptionsSO : ScriptableObject
     [SerializeField] float _volume; public float Volume { get { return _volume; } set { _volume = value; UpdateVolume(); } }
 
     [SerializeField] float _testVolume;
-    [SerializeField] bool _muted = false; public bool Muted { get { return _muted; } set { _muted = value; UpdateVolume(); } }
+    [SerializeField] float _childNoticeVolume; public float ChildNoticeVolume { get => _childNoticeVolume; }
 
-    [SerializeField] float _childNoticeVolume; public float ChildNoticeVolume { get { return _childNoticeVolume; } set { _childNoticeVolume = value; } }
+    [SerializeField] float _fenceNoticeSound; public float FenceNoticeSound { get => _fenceNoticeSound; }
 
     [Space(40)]
     [Header("Sound")]
@@ -41,35 +41,35 @@ public class OptionsSO : ScriptableObject
     [Space(20)]
 
     [Tooltip("Volume of all footsteps")]
-    [SerializeField] float _stepVolume; public float StepVolume { get { return _stepVolume; } set { _stepVolume = value; } }
+    [SerializeField] float _stepVolume; public float StepVolume { get => _stepVolume; }
 
     [Tooltip("Volume of standard attacksound")]
-    [SerializeField] float _genericAttackVolume; public float GenericAttackVolume { get { return _genericAttackVolume; } set { _genericAttackVolume = value; } }
+    [SerializeField] float _genericAttackVolume; public float GenericAttackVolume { get => _genericAttackVolume; }
 
     [Tooltip("Volume of standard attack swoosh")]
-    [SerializeField] float _attackSwooshVolume; public float AttackSwooshVolume { get { return _attackSwooshVolume; } set { _attackSwooshVolume = value; } }
+    [SerializeField] float _attackSwooshVolume; public float AttackSwooshVolume { get => _attackSwooshVolume; }
 
     [Tooltip("Volume of attorney hits")]
-    [SerializeField] float _attornyHitVolume; public float AttornyHitVolume { get { return _attornyHitVolume; } set { _attornyHitVolume = value; } }
+    [SerializeField] float _attornyHitVolume; public float AttornyHitVolume { get => _attornyHitVolume; }
 
     [Tooltip("Volume of blocking an attack")]
-    [SerializeField] float _attorneyBlockVolume; public float AttorneyBlockVolume { get { return _attorneyBlockVolume; } set { _attorneyBlockVolume = value; } }
+    [SerializeField] float _attorneyBlockVolume; public float AttorneyBlockVolume { get => _attorneyBlockVolume; }
 
     [Tooltip("Volume when the block breaks due to hard attacks")]
-    [SerializeField] float _attorneyBlockBreakVolume; public float AttorneyBlockBreakVolume { get { return _attorneyBlockBreakVolume; ; } set { _attorneyBlockBreakVolume = value; } }
+    [SerializeField] float _attorneyBlockBreakVolume; public float AttorneyBlockBreakVolume { get => _attorneyBlockBreakVolume; }
 
     [Tooltip("Volume attorney getting hit")]
-    [SerializeField] float _attorneyGotHitVolume; public float AttorneyGotHitVolume { get { return _attorneyGotHitVolume; } set { _attorneyGotHitVolume = value; } }
+    [SerializeField] float _attorneyGotHitVolume; public float AttorneyGotHitVolume { get => _attorneyGotHitVolume; }
 
     [Tooltip("Volume attorney heavy breathing")]
-    [SerializeField] float _attorneyHeavyBreathVolume = 0; public float AttorneyHeavyBreathVolume { get => _attorneyHeavyBreathVolume; set => _attorneyHeavyBreathVolume = value; }
+    [SerializeField] float _attorneyHeavyBreathVolume = 0; public float AttorneyHeavyBreathVolume { get => _attorneyHeavyBreathVolume; }
 
 
     [Tooltip("Volume of child screaming for help")]
-    [SerializeField] float _childHelpVolume; public float ChildHelpVolume { get { return _childHelpVolume; } set { _childHelpVolume = value; } }
+    [SerializeField] float _childHelpVolume; public float ChildHelpVolume { get => _childHelpVolume; set => _childHelpVolume = value; }
 
     [Tooltip("Volume of child cheering")]
-    [SerializeField] float _childCheeringVolume; public float ChildCheeringVolume { get { return _childCheeringVolume; } set { _childCheeringVolume = value; } }
+    [SerializeField] float _childCheeringVolume; public float ChildCheeringVolume { get => _childCheeringVolume; set => _childCheeringVolume = value; }
 
 
 
@@ -96,7 +96,6 @@ public class OptionsSO : ScriptableObject
     {
         AudioListener.volume = _volume * volumeCorrectionMultiplier;
         _testVolume = AudioListener.volume;
-
     }
 
     private void OnEnable()

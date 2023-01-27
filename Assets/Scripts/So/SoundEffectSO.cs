@@ -22,6 +22,8 @@ public class SoundEffectSO : ScriptableObject
     [Space(10)]
     public AudioClip[] fenceSound;
     [Space(10)]
+    public AudioClip[] fenceStartNoticeSound;
+    [Space(10)]
     public AudioClip[] metalGateHitSound;
     [Space(10)]
     public AudioClip[] childNoticeSound;
@@ -107,11 +109,6 @@ public class SoundEffectSO : ScriptableObject
 
     #endregion
 
-    private void Awake()
-    {
-
-    }
-
     // Sound Effect
     public AudioClip Punch()
     {
@@ -128,6 +125,11 @@ public class SoundEffectSO : ScriptableObject
     public AudioClip Fence()
     {
         return fenceSound[Random.Range(0, fenceSound.Length)];
+    }
+
+    public AudioClip FenceStartNotice()
+    {
+        return fenceStartNoticeSound[Random.Range(0, fenceStartNoticeSound.Length)];
     }
 
     public AudioClip MetalGateHit()

@@ -17,5 +17,5 @@ MonoBehaviour:
   _playerMaxHealth: 4
   _playerParagraphCount: 0
   _paragraphsToAddLife: 4
-  _freedChilds: 0
+  _freedChilds: 10
   _childsToFree: 10

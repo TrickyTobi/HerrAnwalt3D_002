@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1302939122}
   - component: {fileID: 1302939121}
   - component: {fileID: 1260446178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GateComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8467788836413285126}
+  - {fileID: 6246515847286882939}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,8 +63,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7249053, y: 3.3130639, z: 0.19156551}
-  m_Center: {x: 0.064626336, y: 1.8370522, z: -0.0064868927}
+  m_Size: {x: 3.57, y: 3.3130639, z: 0.19156551}
+  m_Center: {x: 0, y: 1.72, z: -0.0064868927}
 --- !u!114 &1260446178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,9 +81,11 @@ MonoBehaviour:
   _doorCell: {fileID: 0}
   _doorLife: 3
   _playerStatsSO: {fileID: 11400000, guid: 555af2bef029d5441ba84ed0d7607902, type: 2}
-  _explosionForce: 600
-  _explosionRadius: 2
-  _explosionUpward: 1
+  _optionsSO: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
+  _soundEffectSO: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
+  _explosionForce: 800
+  _explosionRadius: 3
+  _explosionUpward: 1.3
 --- !u!1 &3863801928146073197
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +97,7 @@ GameObject:
   - component: {fileID: 8467788836413285126}
   - component: {fileID: 5831991030937443607}
   - component: {fileID: 3255838333973459703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gate
   m_TagString: hitable
   m_Icon: {fileID: 0}
@@ -166,3 +169,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7019510411960578788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6246515847286882939}
+  - component: {fileID: 7448845882354171287}
+  m_Layer: 0
+  m_Name: FrontGateCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6246515847286882939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019510411960578788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.1699884, y: 2.1553068, z: -1.8444786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5533244303604121282}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7448845882354171287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019510411960578788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7466862, y: 2.8107533, z: 0.36157465}
+  m_Center: {x: 1.0694498, y: -0.9053767, z: 1.6680391}

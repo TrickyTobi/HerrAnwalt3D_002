@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -24,8 +23,8 @@ public class PlayerStateMachine : MonoBehaviour
 
     [SerializeField] OptionsSO _optionsSO;
 
-    [SerializeField] PlayerStatsSO _playerStatsSO; public PlayerStatsSO PlayerStatsSO { get => _playerStatsSO; set => _playerStatsSO = value; }
-    [SerializeField] SoundEffectSO _soundEffectSO; public SoundEffectSO SoundEffectSO { get => _soundEffectSO; set => _soundEffectSO = value; }
+    [SerializeField] PlayerStatsSO _playerStatsSO;
+    [SerializeField] SoundEffectSO _soundEffectSO;
 
     [SerializeField] EventChannelSO _event;
 
@@ -86,10 +85,8 @@ public class PlayerStateMachine : MonoBehaviour
     [Space(10)]
 
     [SerializeField] float _groundDrag;
-    public float GroundDrag { get => _groundDrag; set => _groundDrag = value; }
 
     [SerializeField] float _airbornDrag;
-    public float AirbornDrag { get => _airbornDrag; set => _airbornDrag = value; }
 
 
     [Space(10)]
@@ -105,9 +102,6 @@ public class PlayerStateMachine : MonoBehaviour
     Vector2 _currentMovementInput;
 
     Vector3 _currentMovement;
-    public float CurrentMovementX { get { return _currentMovement.x; } set { _currentMovement.x = value; } }
-    public float CurrentMovementY { get { return _currentMovement.y; } set { _currentMovement.y = value; } }
-    public float CurrentMovementZ { get { return _currentMovement.z; } set { _currentMovement.z = value; } }
     bool _isMovementPressed; public bool IsMovementPressed { get { return _isMovementPressed; } }
     bool _isRunPressed; public bool IsRunPressed { get { return _isRunPressed; } }
 
@@ -128,8 +122,8 @@ public class PlayerStateMachine : MonoBehaviour
     [Header("Looking")]
     [Space(10)]
 
-    [SerializeField] float _maxUpLookAngle; public float MaxUpLookAngle { get => _maxUpLookAngle; set => _maxUpLookAngle = value; }
-    [SerializeField] float _maxDownLookAngle; public float MaxDownLookAngle { get => _maxDownLookAngle; set => _maxDownLookAngle = value; }
+    [SerializeField] float _maxUpLookAngle;
+    [SerializeField] float _maxDownLookAngle;
 
     #endregion
 
@@ -151,7 +145,7 @@ public class PlayerStateMachine : MonoBehaviour
     int _isGroundedHash; public int IsGroundedHash { get { return _isGroundedHash; } set { _isGroundedHash = value; } }
     int _isWalkingHash; public int IsWalkingHash { get { return _isWalkingHash; } set { _isWalkingHash = value; } }
 
-    int _isRunnningHash; public int IsRunningHash { get { return _isRunnningHash; } set { _isRunnningHash = value; } }
+    int _isRunningHash; public int IsRunningHash { get { return _isRunningHash; } set { _isRunningHash = value; } }
 
     int _isJumpHash; public int IsJumpHash { get { return _isJumpHash; } set { _isJumpHash = value; } }
 
@@ -166,10 +160,6 @@ public class PlayerStateMachine : MonoBehaviour
     [Space(10)]
     [Header("Animation")]
     [Space(10)]
-
-    float _animBlockT = 0.2f; public float AnimBlockT { get => _animBlockT; set => _animBlockT = value; }
-    float _animAttackT = 0.2f; public float AnimAttackT { get => _animAttackT; set => _animAttackT = value; }
-
     [SerializeField] float _velocityX = 0; public float VelocityX { get => _velocityX; set => _velocityX = value; }
 
     [SerializeField] float _velocityZ = 0; public float VelocityZ { get => _velocityZ; set => _velocityZ = value; }
@@ -184,9 +174,9 @@ public class PlayerStateMachine : MonoBehaviour
 
     [SerializeField] float _zeroThreshold; public float ZeroThreshold { get => _zeroThreshold; set => _zeroThreshold = value; }
 
-    [SerializeField] float _defaultAnimationWeight = 0.6f; public float DefaultAnimationWeight { get => _defaultAnimationWeight; }
+    [SerializeField] float _defaultAnimationWeight = 0.6f;
 
-    [SerializeField] int _animHandsLayer; public int AnimHandsLayer { get => _animHandsLayer; }
+    [SerializeField] int _animHandsLayer;
 
 
     #endregion
@@ -199,14 +189,13 @@ public class PlayerStateMachine : MonoBehaviour
 
     [SerializeField] int _maxBlocks;
     int _blockCount = 0;
-    [SerializeField] bool _isAttackPressed; public bool IsAttackPressed { get { return _isAttackPressed; } set { _isAttackPressed = value; } }
+    [SerializeField] bool _isAttackPressed;
     [SerializeField] bool _isAttacking; public bool IsAttacking { get { return _isAttacking; } set { _isAttacking = value; } }
 
-    [SerializeField] bool _isBlockPressed; public bool IsBlockPressed { get { return _isBlockPressed; } set { _isBlockPressed = value; } }
-    [SerializeField] bool _attackEnding = false; public bool AttackEnding { get => _attackEnding; set => _attackEnding = value; }
-    [SerializeField] bool _attackEnded = false; public bool AttackEnded { get => _attackEnded; set => _attackEnded = value; }
+    [SerializeField] bool _isBlockPressed;
+    [SerializeField] bool _attackEnding = false;
 
-    [SerializeField] bool _isBlockEnding = false; public bool IsBlockEnding { get => _isBlockEnding; set => _isBlockEnding = value; }
+    [SerializeField] bool _isBlockEnding = false;
 
     bool _hitTarget = false; public bool HitTarget { get => _hitTarget; set => _hitTarget = value; }
 
@@ -236,8 +225,6 @@ public class PlayerStateMachine : MonoBehaviour
 
     String _groundMaterial;
 
-
-
     #endregion
 
     private void Awake()
@@ -256,7 +243,7 @@ public class PlayerStateMachine : MonoBehaviour
         _currentPostProcessWeight = _postProcess.weight;
 
         _states = new PlayerStateFactory(this);
-        _currentState = _states.Grounded(); //setzt bei Erstellung der StateMachine den ersten SuperState.
+        _currentState = _states.Grounded();
         _currentState.EnterState();
         _originalRot = transform.eulerAngles;
 
@@ -307,7 +294,7 @@ public class PlayerStateMachine : MonoBehaviour
         HandleCameraShake();
         HandleRotation();
         HandleMovement();
-        _currentState.UpdateStatePhysics(); // Updated sowohl SuperStates als auch SubStates aus dem BaseState heraus
+        _currentState.UpdateStatePhysics();
     }
 
     private void LateUpdate()
@@ -414,14 +401,14 @@ public class PlayerStateMachine : MonoBehaviour
     void SetupAnimator()
     {
         _animator = GetComponent<Animator>();
-        IsGroundedHash = Animator.StringToHash("isGrounded");
-        IsWalkingHash = Animator.StringToHash("isWalking");
-        IsRunningHash = Animator.StringToHash("isRunning");
-        IsAttackHash = Animator.StringToHash("isAttack");
-        IsBlockHash = Animator.StringToHash("isBlock");
-        IsJumpHash = Animator.StringToHash("isJumping");
-        VelocityXHash = Animator.StringToHash("velocityX");
-        VelocityZHash = Animator.StringToHash("velocityZ");
+        _isGroundedHash = Animator.StringToHash("isGrounded");
+        _isWalkingHash = Animator.StringToHash("isWalking");
+        _isRunningHash = Animator.StringToHash("isRunning");
+        _isAttackHash = Animator.StringToHash("isAttack");
+        _isBlockHash = Animator.StringToHash("isBlock");
+        _isJumpHash = Animator.StringToHash("isJumping");
+        _velocityXHash = Animator.StringToHash("velocityX");
+        _velocityZHash = Animator.StringToHash("velocityZ");
     }
     void PlayerAttackEnding()
     {

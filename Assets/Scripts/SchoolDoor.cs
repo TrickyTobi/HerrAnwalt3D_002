@@ -32,7 +32,6 @@ public class SchoolDoor : MonoBehaviour
         _audioUtilitySource.spatialBlend = 0;
 
         _audioUtilitySource.clip = _sounds.ChildNotice(_sounds.childNoticeSound.Length);
-        Debug.Log(_sounds.childNoticeSound.Length);
         _playerStats.FreedChilds = 0;
 
     }

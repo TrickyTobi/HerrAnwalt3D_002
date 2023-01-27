@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1273172223322230436}
   - component: {fileID: 3913557904322787950}
   - component: {fileID: 843554697613550240}
-  - component: {fileID: 329859574879600238}
   - component: {fileID: 1899735774106873561}
-  m_Layer: 0
+  - component: {fileID: 4371858177878269464}
+  m_Layer: 8
   m_Name: BarbedWireMetalFence_26_v1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4243, y: 1.4243, z: 1.4243}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 598096051713487952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,21 +103,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &329859574879600238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3264894628783676347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb38ea8fe4b0154e8f4c19057972b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eventChannelSO: {fileID: 11400000, guid: 64f63c7bb6eeda847b8c57a00546a0e4, type: 2}
-  _soundEffectSO: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
-  _optionsSO: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
 --- !u!65 &1899735774106873561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,5 +114,96 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2648072, y: 1.4327724, z: 0.09}
+  m_Size: {x: 0.09, y: 1.2, z: 0.21}
+  m_Center: {x: 0.58, y: 0.6486782, z: -0.02}
+--- !u!65 &4371858177878269464
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264894628783676347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09, y: 1.2, z: 0.21}
+  m_Center: {x: -0.58, y: 0.6486782, z: -0.02}
+--- !u!1 &4633804163890160368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598096051713487952}
+  - component: {fileID: 5956877021123771855}
+  - component: {fileID: 9108909491065967095}
+  - component: {fileID: 3678952377335989139}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &598096051713487952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633804163890160368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2739574995243696385}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5956877021123771855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633804163890160368}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2, z: 0.06}
   m_Center: {x: 0.007530421, y: 0.6486782, z: -0.02}
+--- !u!114 &9108909491065967095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633804163890160368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb38ea8fe4b0154e8f4c19057972b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventChannelSO: {fileID: 11400000, guid: 64f63c7bb6eeda847b8c57a00546a0e4, type: 2}
+  _soundEffectSO: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
+  _optionsSO: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
+--- !u!54 &3678952377335989139
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4633804163890160368}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

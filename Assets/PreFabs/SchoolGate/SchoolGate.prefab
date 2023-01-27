@@ -578,57 +578,9 @@ PrefabInstance:
       propertyPath: _doorCell
       value: 
       objectReference: {fileID: 9048593282617852692}
-    - target: {fileID: 1260446178, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: _optionsSO
-      value: 
-      objectReference: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
-    - target: {fileID: 1260446178, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: _soundEffectSO
-      value: 
-      objectReference: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
-    - target: {fileID: 1260446178, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: _explosionForce
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260446178, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: _explosionRadius
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260446178, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: _explosionUpward
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302939121, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_Size.x
-      value: 3.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302939121, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302939121, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_Center.y
-      value: 1.72
-      objectReference: {fileID: 0}
     - target: {fileID: 3785797356291700232, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
       propertyPath: m_Name
       value: GateComplete
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785797356291700232, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3785797356291700232, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863801928146073197, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863801928146073197, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5533244303604121282, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
       propertyPath: m_RootOrder
@@ -640,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5533244303604121282, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.065
+      value: 0.06500006
       objectReference: {fileID: 0}
     - target: {fileID: 5533244303604121282, guid: f0c3cf43c7f3d1e40af85162558a5c37, type: 3}
       propertyPath: m_LocalPosition.z

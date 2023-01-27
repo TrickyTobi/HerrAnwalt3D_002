@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452c1b3010b89d348a35f37b9be9ea74, type: 3}
   m_Name: OptionsSO
   m_EditorClassIdentifier: 
-  mouseSensetivity: 1.1635945
-  _showLoadingScreen: 1
+  mouseSensetivity: 1.2529186
+  _showLoadingScreen: 0
   _debug: 0
-  _volume: 0.4
-  _testVolume: 5.365815
-  _muted: 0
+  _volume: 1
+  _testVolume: 10
   _childNoticeVolume: 0.17
-  _backgroundMusicVolume: 0.02
-  _fightMusicVolume: 0.11
+  _fenceNoticeSound: 0.2
+  _backgroundMusicVolume: 0.017
+  _fightMusicVolume: 0.13
   _endvideoVolume: 0.05
   _loadingScreenVolume: 0.2
   _laptopVolume: 0.25
