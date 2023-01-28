@@ -373,6 +373,8 @@ public class TeacherLogic : MonoBehaviour
         if (_dying)
             return;
 
+
+
         _damageActive = false;
 
         StopCoroutine(TauntRoutine());
@@ -395,6 +397,9 @@ public class TeacherLogic : MonoBehaviour
             rb.AddExplosionForce(_explosionForce, transform.position + Vector3.down * 0.4f, _explosionRadius, _explosionUpward);
         }
 
+        _playerStatsSO.TeacherAlive--;
+        if (_playerStatsSO.TeacherAlive <= 0)
+            _playerStatsSO.PlayerHealth = 4;
 
 
         _chasing = false;

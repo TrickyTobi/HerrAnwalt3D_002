@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: OptionsSO
   m_EditorClassIdentifier: 
   mouseSensetivity: 1.2529186
-  _showLoadingScreen: 0
+  _showLoadingScreen: 1
   _debug: 1
-  _volume: 0.47313842
-  _testVolume: 4.7313843
+  _volume: 0.45714286
+  _testVolume: 4.571429
   _fenceNoticeSound: 0.2
   _gateHitVolume: 0.07
   _gateDestroyVolume: 0.09
@@ -42,7 +42,7 @@ MonoBehaviour:
   _childCheeringVolume: 0.2
   _fenceHitVolume: 0.2
   _teacherGotHitVolume: 0.35
-  _teacherTauntingVolume: 1
+  _teacherTauntingVolume: 0.9
   _teacherAttackVolume: 0.4
   _teacherHitVolume: 0.1
-  _teacherDeathVolume: 1
+  _teacherDeathVolume: 0.7

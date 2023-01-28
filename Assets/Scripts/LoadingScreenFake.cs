@@ -7,6 +7,7 @@ public class LoadingScreenFake : MonoBehaviour
 {
 
     [SerializeField] AudioSource _music;
+
     [SerializeField] PlayerStateMachine _player;
     [SerializeField] GameObject _gameUI;
     [SerializeField] GameObject _loadingScreen;
@@ -17,16 +18,21 @@ public class LoadingScreenFake : MonoBehaviour
 
 
     VideoPlayer _video;
-    AudioSource _audio;
+    AudioSource _videoAudio;
+
+
+    private void Awake()
+    {
+        AudioListener.volume = 0;
+    }
 
     private void Start()
     {
         _music = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
         _player = GameObject.Find("HerrAnwalt").GetComponent<PlayerStateMachine>();
-        //_gameUI = GameObject.Find("3D Canvas");
         _video = GetComponent<VideoPlayer>();
-        _audio = GetComponent<AudioSource>();
-
+        _videoAudio = GetComponent<AudioSource>();
+        _videoAudio.volume = _options.LoadingScreenVolume;
 
         if (!_options.ShowLoadingScreen)
         {
@@ -34,8 +40,6 @@ public class LoadingScreenFake : MonoBehaviour
             _playing = false;
             return;
         }
-
-        _audio.volume = _options.LoadingScreenVolume;
 
         _playing = true;
 
@@ -53,8 +57,8 @@ public class LoadingScreenFake : MonoBehaviour
             _music.volume = 0;
             _options.ShowLoadingScreen = false;
 
-
         }
+
 
 
         if (!_playing)

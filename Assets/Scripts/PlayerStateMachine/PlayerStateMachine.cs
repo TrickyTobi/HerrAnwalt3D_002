@@ -233,14 +233,14 @@ public class PlayerStateMachine : MonoBehaviour
 
         _postProcess.weight = 0;
         _postProcessRun.weight = 0;
-
+        
         SetupAnimator();
         _animator.SetLayerWeight(_animHandsLayer, _defaultAnimationWeight);
 
         Cursor.lockState = CursorLockMode.Locked;
         _rigidBody.freezeRotation = true;
-        
 
+        
 
         _states = new PlayerStateFactory(this);
         _currentState = _states.Grounded();
@@ -252,10 +252,7 @@ public class PlayerStateMachine : MonoBehaviour
     {
         _event.EnableInput();
 
-        
-        
-
-
+        _playerStatsSO.TeacherAlive = 14;
         _playerStatsSO.PlayerHealth = _playerStatsSO.PlayerMaxHealth;
         _playerStatsSO.PlayerParagraphCount = 0;
 
@@ -485,7 +482,7 @@ public class PlayerStateMachine : MonoBehaviour
             if (_audioHeartBeatPlayer.volume == 0f)
                 return;
 
-            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, 0, Time.deltaTime * 0.2f);
+            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, 0, Time.deltaTime * 1.2f);
 
 
             if (_audioHeartBeatPlayer.volume == 0f)
@@ -501,7 +498,7 @@ public class PlayerStateMachine : MonoBehaviour
         if (_playerStatsSO.PlayerHealth == 2)
         {
             _postProcess.weight = Mathf.Lerp(_postProcess.weight, _2HPPostProcess, Time.deltaTime * 10f);
-            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, _optionsSO.AttorneyHeartbeatVolume / 4f, Time.deltaTime * 1f);
+            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, 0, Time.deltaTime * 1.2f);
 
             if (_heavyHeartBeatSound)
             {
@@ -588,12 +585,12 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void IncreaseChromaticAberation()
     {
-        _postProcessRun.weight = Mathf.Lerp(_postProcessRun.weight, 1, Time.deltaTime * 1.2f);
+        _postProcessRun.weight = Mathf.Lerp(_postProcessRun.weight, 1, Time.deltaTime * 1f);
     }
 
     public void DecreaseChromaticAberation()
     {
-        _postProcessRun.weight = Mathf.Lerp(_postProcessRun.weight, 0, Time.deltaTime * 1.2f);
+        _postProcessRun.weight = Mathf.Lerp(_postProcessRun.weight, 0, Time.deltaTime * 4f);
     }
 
     void SoundSetup()

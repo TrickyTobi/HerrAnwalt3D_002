@@ -23,6 +23,7 @@ public class PlayerStatsSO : ScriptableObject
     [SerializeField] int _freedChilds; public int FreedChilds { get => _freedChilds; set => _freedChilds = value; }
     [SerializeField] int _childsToFree; public int ChildsToFree { get => _childsToFree; }
 
+    [SerializeField] int _teacherAlive; public int TeacherAlive { get => _teacherAlive; set => _teacherAlive = value; }
     
 
 

@@ -23,6 +23,8 @@ public class PauseMenuController : MonoBehaviour
     public Sprite _unMutedSprite;
     [SerializeField] Image _muteImage;
 
+
+
     void Start()
     {
         PauseScreen.SetActive(false);
@@ -37,6 +39,8 @@ public class PauseMenuController : MonoBehaviour
 
     void OnEscape(InputAction.CallbackContext context)
     {
+        
+
         if (_paused)
         {
 
@@ -65,6 +69,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void ShowPause()
     {
+        _event.PauseScreenToggled();
         PauseScreen.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
@@ -73,6 +78,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void ResumeGame()
     {
+        _event.PauseScreenToggledOff();
         PauseScreen.SetActive(false);
         _event.EnableInput();
         Time.timeScale = 1;

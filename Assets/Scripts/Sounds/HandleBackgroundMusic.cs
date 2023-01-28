@@ -8,6 +8,7 @@ public class HandleBackgroundMusic : MonoBehaviour
     [SerializeField] AudioSource _backgroundMusic;
     AudioSource _fightMusic;
     bool _fightMusicPlaying;
+    bool _pauseScreenActive = false;
 
 
 
@@ -20,7 +21,8 @@ public class HandleBackgroundMusic : MonoBehaviour
 
         EventChannelSO.OnGameOver += GameChecker;
         EventChannelSO.OnGameEnded += GameChecker;
-
+        EventChannelSO.OnPauseScreen += PauseFightMusic;
+        EventChannelSO.OnPauseScreenOff += ContinueFightMusic;
     }
 
     private void Update()
@@ -39,6 +41,8 @@ public class HandleBackgroundMusic : MonoBehaviour
         }
 
 
+        if (_pauseScreenActive)
+            return;
 
 
         if (_fightMusicPlaying)
@@ -48,8 +52,8 @@ public class HandleBackgroundMusic : MonoBehaviour
         }
         else
         {
-            _backgroundMusic.volume = Mathf.Lerp(_backgroundMusic.volume, _optionsSO.BackgroundMusicVolume, Time.deltaTime * 0.6f);
-            _fightMusic.volume = Mathf.Lerp(_fightMusic.volume, 0, Time.deltaTime * 0.6f);
+            _backgroundMusic.volume = Mathf.Lerp(_backgroundMusic.volume, _optionsSO.BackgroundMusicVolume, Time.deltaTime * 1f);
+            _fightMusic.volume = Mathf.Lerp(_fightMusic.volume, 0, Time.deltaTime * 1f);
         }
 
     }
@@ -60,11 +64,26 @@ public class HandleBackgroundMusic : MonoBehaviour
         this.enabled = false;
     }
 
+    void PauseFightMusic()
+    {
+        _fightMusic.volume = 0;
+        _backgroundMusic.volume = _optionsSO.BackgroundMusicVolume;
+        _pauseScreenActive = true;
+    }
+
+    void ContinueFightMusic()
+    {
+        _pauseScreenActive = false;
+    }
+
     private void OnDisable()
     {
 
         EventChannelSO.OnGameOver -= GameChecker;
         EventChannelSO.OnGameEnded -= GameChecker;
+        EventChannelSO.OnPauseScreen -= PauseFightMusic;
+        EventChannelSO.OnPauseScreenOff -= ContinueFightMusic;
+
     }
 
 

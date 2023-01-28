@@ -13,6 +13,8 @@ public class EventChannelSO : ScriptableObject
     public static event EventChannel OnGameEnded;
     public static event EventChannel OnEnableInput;
     public static event EventChannel OnDisableInput;
+    public static event EventChannel OnPauseScreen;
+    public static event EventChannel OnPauseScreenOff;
 
     // Gets called if a life is added to the player.
     public void AddLife()
@@ -59,6 +61,18 @@ public class EventChannelSO : ScriptableObject
         if (OnDisableInput != null)
             OnDisableInput.Invoke();
 
+    }
+
+    public void PauseScreenToggled()
+    {
+        if (OnPauseScreen != null)
+            OnPauseScreen.Invoke();
+    }
+
+    public void PauseScreenToggledOff()
+    {
+        if (OnPauseScreenOff != null)
+            OnPauseScreenOff.Invoke();
     }
 
 }
