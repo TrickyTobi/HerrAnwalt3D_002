@@ -25,6 +25,8 @@ public class PlayerIdleState : PlayerBaseState
         _ctx.HandleBlock();
 
         _ctx.DecreaseBreathSound();
+
+        _ctx.DecreaseChromaticAberation();
     }
 
 

@@ -3666,6 +3666,8 @@ MonoBehaviour:
   _ropeComplete: {fileID: 6357307191019999277}
   _ropeCell: {fileID: 4321257474333367985}
   _playerStatsSO: {fileID: 11400000, guid: 555af2bef029d5441ba84ed0d7607902, type: 2}
+  _sound: {fileID: 11400000, guid: e8dadd16f1140474fbd635923f506b07, type: 2}
+  _option: {fileID: 11400000, guid: 6bdfdfaf957740149b6f1e2c3acbccce, type: 2}
   _explosionForce: 100
   _explosionRadius: 2
   _explosionUpward: 0.5

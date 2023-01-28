@@ -27,6 +27,7 @@ public class PlayerWalkState : PlayerBaseState
 
         _ctx.DecreaseBreathSound();
 
+        _ctx.DecreaseChromaticAberation();
     }
 
     public override void UpdatePhysics() //Wird bei Physikalischen änderungen aufgerufen

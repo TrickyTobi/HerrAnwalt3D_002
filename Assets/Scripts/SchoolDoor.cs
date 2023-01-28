@@ -11,7 +11,12 @@ public class SchoolDoor : MonoBehaviour
     [SerializeField] OptionsSO _options;
     [SerializeField] SoundEffectSO _sounds;
     [SerializeField] float _openingTime;
+
+
+
+    AudioSource _audioPlayerSource;
     AudioSource _audioUtilitySource;
+
     float _timePassed = 0f;
     bool _doorOpen = false;
 
@@ -28,12 +33,12 @@ public class SchoolDoor : MonoBehaviour
     private void Start()
     {
         _narratorCount = 0;
-        _audioUtilitySource = gameObject.AddComponent<AudioSource>();
-        _audioUtilitySource.spatialBlend = 0;
-
-        _audioUtilitySource.clip = _sounds.ChildNotice(_sounds.childNoticeSound.Length);
+        _audioPlayerSource = gameObject.AddComponent<AudioSource>();
+        _audioPlayerSource.spatialBlend = 0;
+        _audioPlayerSource.clip = _sounds.ChildNotice(_sounds.childNoticeSound.Length);
         _playerStats.FreedChilds = 0;
-
+        _audioUtilitySource = gameObject.AddComponent<AudioSource>();
+        _audioUtilitySource.spatialBlend = 1;
     }
 
     private void Update()
@@ -59,7 +64,7 @@ public class SchoolDoor : MonoBehaviour
 
         StartCoroutine(TimeOutTimer());
 
-        _audioUtilitySource.volume = _options.ChildNoticeVolume;
+        _audioPlayerSource.volume = _options.ChildNoticeVolume;
 
         _narratorCount++;
 
@@ -71,16 +76,16 @@ public class SchoolDoor : MonoBehaviour
             switch (_narratorCount)
             {
                 case 1:
-                    _audioUtilitySource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
+                    _audioPlayerSource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
                     break;
                 case 2:
-                    _audioUtilitySource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
+                    _audioPlayerSource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
                     break;
                 case 3:
-                    _audioUtilitySource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
+                    _audioPlayerSource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
                     break;
                 case 4:
-                    _audioUtilitySource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
+                    _audioPlayerSource.PlayOneShot(_sounds.ChildNotice(_narratorCount));
                     break;
                 default:
                     break;
@@ -95,17 +100,21 @@ public class SchoolDoor : MonoBehaviour
         else if (_playerStats.FreedChilds == _playerStats.ChildsToFree && !_doorOpen && _bumpedIn)
             StartCoroutine(OpeningDelay());
         else if (_playerStats.FreedChilds == _playerStats.ChildsToFree && !_doorOpen && !_bumpedIn)
+        {
+            _audioUtilitySource.PlayOneShot(_sounds.DoorOpen(), _options.DoorOpenVolume);
+            _doorOpen = true;
             _enteredTrigger = true;
+        }
 
     }
 
     IEnumerator OpeningDelay()
     {
-        Debug.Log("Here");
-        _audioUtilitySource.Play();
-
-        yield return new WaitForSeconds(_audioUtilitySource.clip.length - 1f);
+        _audioPlayerSource.Play();
         _doorOpen = true;
+
+        yield return new WaitForSeconds(_audioPlayerSource.clip.length - 1f);
+        _audioUtilitySource.PlayOneShot(_sounds.DoorOpen(), _options.DoorOpenVolume);
         _enteredTrigger = true;
     }
 
@@ -117,7 +126,7 @@ public class SchoolDoor : MonoBehaviour
 
     IEnumerator NoticeTimeOutTimer()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(10f);
         _noticeTimeOut = false;
     }
 }

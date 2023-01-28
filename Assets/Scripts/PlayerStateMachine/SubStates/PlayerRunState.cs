@@ -10,39 +10,42 @@ public class PlayerRunState : PlayerBaseState
         ;
     }
 
+    bool _breath;
+    float _breathTimer;
+    float _minimumBreathTime = 3;
 
-    public override void EnterState() //Wird beim betreten des State aufgerufen
+    public override void EnterState()
     {
         _ctx.Animator.SetBool(_ctx.IsWalkingHash, true);
         _ctx.Animator.SetBool(_ctx.IsRunningHash, true);
-        _ctx.AudioBreathPlayer.Play();
+        _breath = false;
+        _breathTimer = 0;
+        _ctx.StartCoroutine(BreathTimer());
 
     }
-    public override void UpdateState() //Wird jeden Frame aufgerufen
+    public override void UpdateState()
     {
         SpeedControl();
         HandleAnimation();
 
-        _ctx.IncreaseBreathSound();
-        
+        _ctx.IncreaseChromaticAberation();
 
-        //  if (_ctx.MaxDownLookAngle < -40f)
-        //      _ctx.MaxDownLookAngle = Mathf.Lerp(_ctx.MaxDownLookAngle, -40f, Time.deltaTime * 30);
+        if (!_breath)
+            return;
+
+        _ctx.IncreaseBreathSound();
+
+
 
     }
 
-    public override void UpdatePhysics() //Wird bei Physikalischen änderungen aufgerufen
+    public override void UpdatePhysics()
     {
         ;
     }
 
-    public override void CheckSwitchState() //checkt ob der SubState geändert werden muss
+    public override void CheckSwitchState()
     {
-        /* if (_ctx.IsMovementPressed && !_ctx.IsRunPressed) //Ändert den SubState über die Methode aus dem BaseState
-             SwitchStates(_factory.Walk());
-         else if (!_ctx.IsMovementPressed && !_ctx.IsRunPressed)
-             SwitchStates(_factory.Idle());*/
-
         if (_ctx.IsRunPressed) return;
 
         if (_ctx.IsMovementPressed)
@@ -54,14 +57,14 @@ public class PlayerRunState : PlayerBaseState
         SwitchStates(_factory.Idle());
     }
 
-    public override void InitializeSubState() //im SubState nicht genutzt
+    public override void InitializeSubState()
     {
         ;
     }
 
-    public override void ExitState() //wird beim verlassen des State aufgerufen
+    public override void ExitState()
     {
-        // _ctx.MaxDownLookAngle = -60f;
+
     }
 
 
@@ -110,5 +113,10 @@ public class PlayerRunState : PlayerBaseState
         _ctx.Animator.SetFloat(_ctx.VelocityZHash, _ctx.VelocityZ, 0.2f, Time.deltaTime);
     }
 
+    IEnumerator BreathTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        _breath = true;
+    }
 
 }

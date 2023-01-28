@@ -29,15 +29,16 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] EventChannelSO _event;
 
     AudioSource _audioUtiletyPlayer;
-    AudioSource _audioBreathPlayer; public AudioSource AudioBreathPlayer { get => _audioBreathPlayer; }
+    AudioSource _audioBreathPlayer;
 
     AudioSource _audioHeartBeatPlayer;
     #endregion
 
     #region PostProcess
 
-    Volume _postProcess;
-    float _currentPostProcessWeight;
+    [SerializeField] Volume _postProcess;
+    [SerializeField] Volume _postProcessRun;
+
     [Space(10)]
     [Header("References")]
     [Space(10)]
@@ -216,12 +217,9 @@ public class PlayerStateMachine : MonoBehaviour
     #region Sounds
 
     bool _heavyHeartBeatSound = false;
-    float _audioHeartBeatPlayerVolume = 0;
 
     [SerializeField] float _mediumHeartBeatVolume;
     [SerializeField] float _heavyHeartBeatVolume;
-
-    float _heavyBreathVolume = 0;
 
     String _groundMaterial;
 
@@ -232,31 +230,36 @@ public class PlayerStateMachine : MonoBehaviour
         _playerInput = new PlayerInput();
         _rigidBody = GetComponent<Rigidbody>();
         _playerCollider = GetComponent<CapsuleCollider>();
-        _postProcess = GetComponentInChildren<Volume>();
+
+        _postProcess.weight = 0;
+        _postProcessRun.weight = 0;
 
         SetupAnimator();
         _animator.SetLayerWeight(_animHandsLayer, _defaultAnimationWeight);
 
         Cursor.lockState = CursorLockMode.Locked;
         _rigidBody.freezeRotation = true;
-        _postProcess.weight = 0;
-        _currentPostProcessWeight = _postProcess.weight;
+        
+
 
         _states = new PlayerStateFactory(this);
         _currentState = _states.Grounded();
         _currentState.EnterState();
         _originalRot = transform.eulerAngles;
-
-
     }
 
     private void Start()
     {
         _event.EnableInput();
-        SoundSetup();
+
+        
+        
+
 
         _playerStatsSO.PlayerHealth = _playerStatsSO.PlayerMaxHealth;
         _playerStatsSO.PlayerParagraphCount = 0;
+
+        SoundSetup();
     }
 
     private void Update()
@@ -474,7 +477,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     void HandleLowLife()
     {
-        if (_playerStatsSO.PlayerHealth > 2)
+        if (_playerStatsSO.PlayerHealth >= 3)
         {
             _postProcess.weight = Mathf.Lerp(_postProcess.weight, 0, Time.deltaTime * 5f);
 
@@ -482,12 +485,11 @@ public class PlayerStateMachine : MonoBehaviour
             if (_audioHeartBeatPlayer.volume == 0f)
                 return;
 
-            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayerVolume, _mediumHeartBeatVolume, Time.deltaTime * 0.2f);
+            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, 0, Time.deltaTime * 0.2f);
 
 
-            if (_audioHeartBeatPlayer.volume <= 0.1f && _heavyHeartBeatSound)
+            if (_audioHeartBeatPlayer.volume == 0f)
             {
-                _audioHeartBeatPlayer.volume = 0;
                 _heavyHeartBeatSound = false;
                 _audioHeartBeatPlayer.Stop();
             }
@@ -498,21 +500,19 @@ public class PlayerStateMachine : MonoBehaviour
 
         if (_playerStatsSO.PlayerHealth == 2)
         {
-            _postProcess.weight = Mathf.Lerp(_postProcess.weight, _2HPPostProcess, Time.deltaTime * 20f);
-            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayerVolume, 0.5f, Time.deltaTime * 1f);
+            _postProcess.weight = Mathf.Lerp(_postProcess.weight, _2HPPostProcess, Time.deltaTime * 10f);
+            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, _optionsSO.AttorneyHeartbeatVolume / 4f, Time.deltaTime * 1f);
 
             if (_heavyHeartBeatSound)
             {
                 _heavyHeartBeatSound = true;
-                _audioHeartBeatPlayer.Play();
-
             }
             return;
         }
 
         if (_playerStatsSO.PlayerHealth == 1)
         {
-            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayerVolume, _heavyHeartBeatVolume, Time.deltaTime * 1f);
+            _audioHeartBeatPlayer.volume = Mathf.Lerp(_audioHeartBeatPlayer.volume, _optionsSO.AttorneyHeartbeatVolume, Time.deltaTime * 1f);
             _postProcess.weight = Mathf.Lerp(_postProcess.weight, _1HPPostProcess, Time.deltaTime * 20f);
 
             return;
@@ -578,12 +578,22 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void IncreaseBreathSound()
     {
-        AudioBreathPlayer.volume = Mathf.Lerp(_heavyBreathVolume, _optionsSO.AttorneyHeavyBreathVolume, Time.deltaTime * 0.1f);
+        _audioBreathPlayer.volume = Mathf.Lerp(_audioBreathPlayer.volume, _optionsSO.AttorneyHeavyBreathVolume, Time.deltaTime * 0.1f);
     }
 
     public void DecreaseBreathSound()
     {
-        AudioBreathPlayer.volume = Mathf.Lerp(_heavyBreathVolume, 0, Time.deltaTime * 0.2f);
+        _audioBreathPlayer.volume = Mathf.Lerp(_audioBreathPlayer.volume, 0, Time.deltaTime * 0.6f);
+    }
+
+    public void IncreaseChromaticAberation()
+    {
+        _postProcessRun.weight = Mathf.Lerp(_postProcessRun.weight, 1, Time.deltaTime * 1.2f);
+    }
+
+    public void DecreaseChromaticAberation()
+    {
+        _postProcessRun.weight = Mathf.Lerp(_postProcessRun.weight, 0, Time.deltaTime * 1.2f);
     }
 
     void SoundSetup()
@@ -591,11 +601,18 @@ public class PlayerStateMachine : MonoBehaviour
         _audioUtiletyPlayer = gameObject.AddComponent<AudioSource>();
         _audioUtiletyPlayer.spatialBlend = 0;
         _audioBreathPlayer = gameObject.AddComponent<AudioSource>();
-        _audioBreathPlayer.spatialBlend = 0;
         _audioBreathPlayer.clip = _soundEffectSO.AttorneyheavyBreathing();
+        _audioBreathPlayer.spatialBlend = 0;
+        _audioBreathPlayer.volume = 0;
+        _audioBreathPlayer.loop = true;
+        _audioBreathPlayer.Play();
         _audioHeartBeatPlayer = gameObject.AddComponent<AudioSource>();
-        _audioHeartBeatPlayer.spatialBlend = 0;
         _audioHeartBeatPlayer.clip = _soundEffectSO.AttorneyHeartBeat();
+        _audioHeartBeatPlayer.spatialBlend = 0;
+        _audioHeartBeatPlayer.volume = 0;
+        _audioHeartBeatPlayer.loop = true;
+        _audioHeartBeatPlayer.Play();
+
 
     }
 

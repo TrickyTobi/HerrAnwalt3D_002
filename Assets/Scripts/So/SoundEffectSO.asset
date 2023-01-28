@@ -33,7 +33,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: acc0709a6d624564da827e17a8d71f58, type: 3}
   - {fileID: 8300000, guid: bb250041e9521a34cad9124e11d3c924, type: 3}
   metalGateHitSound:
-  - {fileID: 8300000, guid: 9145dc1f507f7654dbb4f553d975766b, type: 3}
+  - {fileID: 8300000, guid: beb8b4d662894be4f8a7698a6d2a6bf0, type: 3}
+  metalGateDestroySound:
+  - {fileID: 8300000, guid: 65dbc9f9621dfbd4ab3d9d20328e4086, type: 3}
+  lockDestroySound:
+  - {fileID: 8300000, guid: b2f2fadb6a8780d4b8f86dc249e7f4e7, type: 3}
+  doorOpenSound:
+  - {fileID: 8300000, guid: ef31f86bf4cd28848b241647c3e68783, type: 3}
   childNoticeSound:
   - {fileID: 8300000, guid: c50b024492539934792c257ee283c4b5, type: 3}
   - {fileID: 8300000, guid: 9a3356e6a15c77e468a7a7c6d064e0f3, type: 3}
@@ -71,15 +77,18 @@ MonoBehaviour:
   attorneyGenericAttack:
   - {fileID: 8300000, guid: 9145dc1f507f7654dbb4f553d975766b, type: 3}
   attorneyBlock:
-  - {fileID: 8300000, guid: 2ae05b20f1bca544a9f4777551d5c434, type: 3}
+  - {fileID: 8300000, guid: 1c3e9bb8bb36dbe4c8a2d4b8d201ad69, type: 3}
+  - {fileID: 8300000, guid: 4be16ac3c1b65a94f840cc9a1173c36f, type: 3}
+  - {fileID: 8300000, guid: a470929d1c3b65e4eaf1d81784f339e1, type: 3}
+  - {fileID: 8300000, guid: 5ec28fe9f0de73047bcf219f4c4b69c3, type: 3}
   attorneyBlockBreak:
-  - {fileID: 8300000, guid: b2ea1f8c2c8da51438cec389d2312a2a, type: 3}
+  - {fileID: 8300000, guid: db99ab08c2fdec142a88e0a46d324c51, type: 3}
   attorneyDeath:
   - {fileID: 8300000, guid: d21ce73d773a4f846808c09e2330f6e4, type: 3}
   attorneyHeartBeat:
   - {fileID: 8300000, guid: 0974c52c3d134ca49873e5fde4e312db, type: 3}
   attorneyheavyBreathing:
-  - {fileID: 8300000, guid: a9151616b7350f74a965f2f7ab8843b9, type: 3}
+  - {fileID: 8300000, guid: a333558a55ebcec488ec6bef1de784a5, type: 3}
   teacherMaleTaunt:
   - {fileID: 8300000, guid: 01f50cb10c505d14390fb513fc6ba722, type: 3}
   - {fileID: 8300000, guid: 12758217b5f4d1b4dac1a5ada0064930, type: 3}

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GateDestroyable : MonoBehaviour
 {
+    [SerializeField] GameObject _doorComplete;
     [SerializeField] GameObject _lock;
     [SerializeField] GameObject _doorCell;
     [SerializeField] int _doorLife;
+
+
 
     [SerializeField] PlayerStatsSO _playerStatsSO;
 
@@ -43,17 +46,18 @@ public class GateDestroyable : MonoBehaviour
 
         _player.HitTarget = true;
         _doorLife--;
-        _audioSource.PlayOneShot(_soundEffectSO.MetalGateHit(), _optionsSO.AttornyHitVolume);
-
+        _audioSource.PlayOneShot(_soundEffectSO.MetalGateHit(), _optionsSO.GateHitVolume);
+        Debug.Log("Hit Gate");
 
         if (_doorLife > 0)
             return;
 
+        GetComponent<BoxCollider>().enabled = false;
+        transform.parent.GetComponent<BoxCollider>().enabled = false;
 
-        // change sound, for  when gate is destroyed
-        _audioSource.PlayOneShot(_soundEffectSO.MetalGateHit(), _optionsSO.AttornyHitVolume);
+        _audioSource.PlayOneShot(_soundEffectSO.MetalGateDestroy(), _optionsSO.GateDestroyVolume);
         _doorCell.SetActive(true);
-        this.gameObject.SetActive(false);
+        _doorComplete.SetActive(false);
         Rigidbody[] rbs = _doorCell.GetComponentsInChildren<Rigidbody>();
         Rigidbody lockRB = _lock.GetComponent<Rigidbody>();
 

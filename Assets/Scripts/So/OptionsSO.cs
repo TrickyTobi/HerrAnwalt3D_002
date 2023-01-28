@@ -22,9 +22,13 @@ public class OptionsSO : ScriptableObject
     [SerializeField] float _volume; public float Volume { get { return _volume; } set { _volume = value; UpdateVolume(); } }
 
     [SerializeField] float _testVolume;
-    [SerializeField] float _childNoticeVolume; public float ChildNoticeVolume { get => _childNoticeVolume; }
 
     [SerializeField] float _fenceNoticeSound; public float FenceNoticeSound { get => _fenceNoticeSound; }
+    [SerializeField] float _gateHitVolume; public float GateHitVolume { get => _gateHitVolume; }
+    [SerializeField] float _gateDestroyVolume; public float GateDestroyVolume { get => _gateDestroyVolume; }
+    [SerializeField] float _lockDestroyVolume; public float LockDestroyVolume { get => _lockDestroyVolume; }
+    [SerializeField] float _doorOpenVolume; public float DoorOpenVolume { get => _doorOpenVolume; }
+    [SerializeField] float _childNoticeVolume; public float ChildNoticeVolume { get => _childNoticeVolume; }
 
     [Space(40)]
     [Header("Sound")]
@@ -33,7 +37,6 @@ public class OptionsSO : ScriptableObject
     [SerializeField] float _fightMusicVolume; public float FightMusicVolume { get => _fightMusicVolume; set => _fightMusicVolume = value; }
     [SerializeField] float _endvideoVolume; public float EndvideoVolume { get => _endvideoVolume; set => _endvideoVolume = value; }
     [SerializeField] float _loadingScreenVolume; public float LoadingScreenVolume { get => _loadingScreenVolume; set => _loadingScreenVolume = value; }
-
     [SerializeField] float _laptopVolume; public float LaptopVolume { get => _laptopVolume; set => _laptopVolume = value; }
 
     [SerializeField] float volumeCorrectionMultiplier;
@@ -64,6 +67,8 @@ public class OptionsSO : ScriptableObject
     [Tooltip("Volume attorney heavy breathing")]
     [SerializeField] float _attorneyHeavyBreathVolume = 0; public float AttorneyHeavyBreathVolume { get => _attorneyHeavyBreathVolume; }
 
+    [Tooltip("Volume attorney heartbeat")]
+    [SerializeField] float _attorneyHeartbeatVolume = 0; public float AttorneyHeartbeatVolume { get => _attorneyHeartbeatVolume; }
 
     [Tooltip("Volume of child screaming for help")]
     [SerializeField] float _childHelpVolume; public float ChildHelpVolume { get => _childHelpVolume; set => _childHelpVolume = value; }

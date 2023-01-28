@@ -26,6 +26,12 @@ public class SoundEffectSO : ScriptableObject
     [Space(10)]
     public AudioClip[] metalGateHitSound;
     [Space(10)]
+    public AudioClip[] metalGateDestroySound;
+    [Space(10)]
+    public AudioClip[] lockDestroySound;
+    [Space(10)]
+    public AudioClip[] doorOpenSound;
+    [Space(10)]
     public AudioClip[] childNoticeSound;
     [Space(10)]
 
@@ -120,8 +126,6 @@ public class SoundEffectSO : ScriptableObject
         return attackSwooshSound[Random.Range(0, attackSwooshSound.Length)];
     }
 
-
-
     public AudioClip Fence()
     {
         return fenceSound[Random.Range(0, fenceSound.Length)];
@@ -136,6 +140,24 @@ public class SoundEffectSO : ScriptableObject
     {
         return metalGateHitSound[Random.Range(0, metalGateHitSound.Length)];
     }
+
+    public AudioClip MetalGateDestroy()
+    {
+        return metalGateDestroySound[Random.Range(0, metalGateDestroySound.Length)];
+    }
+
+    public AudioClip LockDestroy()
+    {
+        return lockDestroySound[Random.Range(0, lockDestroySound.Length)];
+    }
+
+    public AudioClip DoorOpen()
+    {
+        return doorOpenSound[Random.Range(0, doorOpenSound.Length)];
+    }
+
+
+
 
 
     public AudioClip ChildNotice(int _number)

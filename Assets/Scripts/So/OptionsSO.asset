@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensetivity: 1.2529186
   _showLoadingScreen: 0
-  _debug: 0
-  _volume: 1
-  _testVolume: 10
-  _childNoticeVolume: 0.17
+  _debug: 1
+  _volume: 0.47313842
+  _testVolume: 4.7313843
   _fenceNoticeSound: 0.2
-  _backgroundMusicVolume: 0.017
+  _gateHitVolume: 0.07
+  _gateDestroyVolume: 0.09
+  _lockDestroyVolume: 0.03
+  _doorOpenVolume: 0.2
+  _childNoticeVolume: 0.17
+  _backgroundMusicVolume: 0.012
   _fightMusicVolume: 0.13
   _endvideoVolume: 0.05
   _loadingScreenVolume: 0.2
@@ -33,6 +37,7 @@ MonoBehaviour:
   _attorneyBlockBreakVolume: 0.1
   _attorneyGotHitVolume: 0.2
   _attorneyHeavyBreathVolume: 0.2
+  _attorneyHeartbeatVolume: 0.3
   _childHelpVolume: 0.2
   _childCheeringVolume: 0.2
   _fenceHitVolume: 0.2

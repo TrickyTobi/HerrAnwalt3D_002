@@ -10,6 +10,8 @@ public class ChildPole : MonoBehaviour
     [SerializeField] GameObject _ropeCell;
 
     [SerializeField] PlayerStatsSO _playerStatsSO;
+    [SerializeField] SoundEffectSO _sound;
+    [SerializeField] OptionsSO _option;
 
     [SerializeField] float _explosionForce;
     [SerializeField] float _explosionRadius;
@@ -27,6 +29,8 @@ public class ChildPole : MonoBehaviour
         _freed = true;
 
         _playerStatsSO.FreedChilds++;
+
+        this.gameObject.AddComponent<AudioSource>().PlayOneShot(_sound.LockDestroy(), _option.LockDestroyVolume);
 
         _ropeCell.SetActive(true);
         _ropeComplete.SetActive(false);

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerStatsSO
   m_EditorClassIdentifier: 
   _event: {fileID: 11400000, guid: 64f63c7bb6eeda847b8c57a00546a0e4, type: 2}
-  _playerHealth: 4
+  _playerHealth: 1
   _playerMaxHealth: 4
   _playerParagraphCount: 0
   _paragraphsToAddLife: 4
-  _freedChilds: 10
+  _freedChilds: 1
   _childsToFree: 10
