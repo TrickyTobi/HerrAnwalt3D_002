@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensetivity: 1.2529186
   _showLoadingScreen: 1
-  _debug: 1
+  _debug: 0
   _volume: 0.45714286
   _testVolume: 4.571429
-  _fenceNoticeSound: 0.2
+  _fenceNoticeSound: 0.15
   _gateHitVolume: 0.07
   _gateDestroyVolume: 0.09
   _lockDestroyVolume: 0.03
